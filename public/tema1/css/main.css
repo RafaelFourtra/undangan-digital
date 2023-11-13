@@ -1,0 +1,636 @@
+@font-face {
+    font-family: 'Alex Brush';
+    src: url('/tema1/font/Alex_Brush/AlexBrush-Regular.ttf') format('ttf'),
+        url('/tema1/font/Alex_Brush/AlexBrush-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Allura';
+    src: url('/tema1/font/Allura/Allura-Regular.ttf') format('ttf'),
+        url('/tema1/font/Allura/Allura-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Elsie';
+    src: url('/tema1/font/Elsie/Elsie-Regular.ttf') format('ttf'),
+        url('/tema1/font/Elsie/Elsie-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Italianno';
+    src: url('/tema1/font/Italianno/Italianno-Regular.ttf') format('ttf'),
+        url('/tema1/font/Italianno/Italianno-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('/tema1/font/Dancing_Script/static/DancingScript-Regular.ttf') format('ttf'),
+        url('/tema1/font/Dancing_Script/static/DancingScript-Regular.ttf') format('truetype');
+}
+
+* {
+    text-decoration: none !important;
+    color: transparent !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden !important;
+}
+
+.border-animation {
+    border: 1px solid white;
+}
+
+.floats {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.section-one {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    /* Mencegah konten container melewati batas */
+}
+
+.section-one .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://media-cdn.t24.com.tr/media/library/2022/04/1650176049640-dugun.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(50%);
+    /* transition: filter 0.5s; */
+}
+
+.section-one .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#welcoming-sentences-sec1 {
+    font-family: 'Playball', serif;
+    font-weight: 400;
+    z-index: 0;
+    font-size: 0vh;
+    opacity: 0;
+}
+
+#user-name {
+    font-family: 'Italianno', cursive;
+    font-size: 0vh;
+    opacity: 0;
+    font-weight: 400;
+    z-index: 0;
+    color: rgb(255, 255, 255) !important;
+}
+
+#wedding-date-sec1 {
+    font-family: 'Playball', serif;
+    font-weight: 400;
+    font-size: 0;
+    opacity: 0;
+}
+
+#save-date-button {
+    opacity: 0;
+}
+
+
+
+
+/* Section Two */
+.couple-information {
+    background-color: black;
+    padding: 2%;
+}
+
+#bible-verse-sec2 {
+    font-family: 'Italianno', serif;
+    font-size: 10vh;
+    opacity: 0;
+    color: #EBB760 !important;
+}
+
+#bible-verses-sec2 {
+    font-family: 'Playball', serif;
+    font-style: italic;
+    opacity: 0;
+    color: white !important;
+}
+
+#groom,
+#bride {
+    font-family: 'Playball', serif;
+    font-weight: 400;
+    opacity: 0;
+}
+
+#groom-name,
+#bride-name {
+    font-family: 'Elsie', serif;
+    font-size: 8vh;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.774) !important;
+}
+
+#groom-parent-name,
+#bride-parent-name {
+    font-family: 'Playball', serif;
+    font-style: italic;
+    color: #EBB760 !important;
+    opacity: 0;
+}
+
+#big-text-couple-information {
+    font-family: 'Playball', serif;
+    font-weight: bold;
+}
+
+
+
+/* Section 3 */
+.couple-story {
+    position: relative;
+    height: 120vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.couple-story .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('https://media.istockphoto.com/id/621379358/photo/couple-enjoying-sunset-on-the-beach-in-winter.jpg?s=612x612&w=0&k=20&c=mmg0rtrA9g0OTsl1GgBc55QU0_9uQGFAzQMODhnTZ04=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+/* Section 4 */
+.event-detail {
+    background-color: black;
+    padding: 5% 0;
+}
+
+#save-date-text {
+    font-family: 'Italianno', serif;
+    font-size: 0vh;
+    opacity: 0;
+    color: #EBB760 !important;
+}
+
+#event-date {
+    font-family: 'Playball', serif;
+    font-size: 0vh;
+    opacity: 0;
+    color: white !important;
+}
+
+.countdown-box {
+    font-family: 'Playball', serif;
+}
+
+.countdown-box .countdown {
+    width: 50%;
+}
+
+.countdown-box h2 {
+    font-size: 7.7vh;
+}
+
+
+@media (max-width: 768px) {
+    .countdown-box .countdown {
+        width: 75%;
+    }
+
+    .countdown-box h2 {
+        font-size: 4.5vh;
+    }
+
+    .countdown-box h4 {
+        font-size: 2.5vh;
+    }
+}
+
+@media (max-width: 250px) {
+    .countdown-box .countdown {
+        width: 75%;
+    }
+
+    .countdown-box h2 {
+        font-size: 4h;
+    }
+
+    .countdown-box h4 {
+        font-size: 2h;
+    }
+}
+
+
+.countdown-box .days,
+.hours,
+.minutes,
+.second {
+    opacity: 0;
+}
+
+.event-detail-box {
+    background-image: url('/tema1/bg/geometric-bg.png');
+    padding: 5% 0;
+}
+
+#liveStreamingText {
+    font-family: 'Playball', serif;
+    font-size: 6.5vh;
+    color: #EBB760 !important;
+    opacity: 0;
+}
+
+#liveStreamingSubText {
+    font-family: 'Playball', serif;
+    font-size: 2.5vh;
+    font-style: italic;
+    width: 65%;
+    display: block;
+    margin: 1% auto 4% auto;
+    color: white !important;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    #liveStreamingSubText {
+        font-family: 'Playball', serif;
+        font-size: 2.5vh;
+        font-style: italic;
+        width: 85%;
+        display: block;
+        margin: 1% auto 4% auto;
+        padding-bottom: 5%;
+        color: white !important;
+        opacity: 0;
+    }
+
+    .liveStreamingVid {
+        width: 85%;
+    }
+}
+
+#wedding-day-text-sec4 {
+    font-family: 'Italianno', serif;
+    font-size: 13vh;
+    opacity: 0;
+}
+
+#wedding-days-text-sec4,
+#wedding-date-text-sec4 {
+    font-family: 'Playball', serif;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    #wedding-date-text-sec4 {
+        font-family: 'Playball', serif;
+        opacity: 0;
+        margin-bottom: 15% !important;
+    }
+
+    .viewMapButtonAkadNikah {
+        margin-bottom: 15%;
+    }
+
+    #wedding-day-text-sec4 {
+        font-family: 'Italianno', serif;
+        font-size: 7vh;
+        opacity: 0;
+    }
+
+    #akad-nikah-event-text,
+    #resepsi-event-text {
+        font-family: 'Italianno', serif;
+        font-size: 8.5vh !important;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 1.3%;
+        opacity: 0;
+    }
+
+    #event-location-text {
+        font-family: 'Playball', serif;
+        font-size: 2.5vh;
+        opacity: 0;
+        padding: 0 3.5%;
+    }
+
+    .viewMapButton {
+        font-size: 2vh !important;
+
+    }
+}
+
+@media (max-width: 414px) {
+    #wedding-date-text-sec4 {
+        font-family: 'Playball', serif;
+        opacity: 0;
+        margin-bottom: 15% !important;
+        font-size: 0.01vh !important;
+    }
+
+    .viewMapButtonAkadNikah {
+        margin-bottom: 15%;
+    }
+}
+
+#akad-nikah-event-text,
+#resepsi-event-text {
+    font-family: 'Italianno', serif;
+    font-size: 11vh;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1.3%;
+    opacity: 0;
+}
+
+#event-time-text {
+    font-family: 'Playball', serif;
+    opacity: 0;
+}
+
+#event-location-text {
+    font-family: 'Playball', serif;
+    font-size: 2.5vh;
+    opacity: 0;
+}
+
+#health-protocol-text-sec4 {
+    font-family: 'Playball', serif;
+    font-size: 8.5vh;
+    padding-top: 4%;
+    opacity: 0;
+}
+
+#protocol-card-text-sec4 {
+    font-family: 'Playball', serif;
+    font-size: 2.5vh;
+}
+
+@media (max-width: 768px) {
+    .health-protocol-inside {
+        width: 85% !important;
+    }
+
+    #health-protocol-text-sec4 {
+        font-family: 'Playball', serif;
+        font-size: 3.5vh !important;
+        padding-top: 4%;
+        opacity: 0;
+    }
+
+
+}
+
+
+
+/* Section 5 */
+.couple-gallery {
+    background-color: black;
+}
+
+#coupleGalleryText {
+    font-family: 'Playball', serif;
+    color: #EBB760 !important;
+    opacity: 0;
+}
+
+.couple-gallery img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .couple-story-container {
+        flex-direction: column-reverse;
+    }
+
+    #coupleStoryImage1,
+    #coupleStoryImage2,
+    #coupleStoryImage3 {
+        margin-bottom: 5%;
+    }
+
+    #coupleGalleryText {
+        font-family: 'Playball', serif;
+        color: #EBB760 !important;
+        opacity: 0;
+        padding-top: 5%;
+    }
+}
+
+/* Section 6 */
+.couple-stories {
+    background-color: black;
+    padding: 4% 0;
+}
+
+#love-story-text-sec6 {
+    font-family: 'Playball', serif;
+}
+
+#love-story-head-sec6 {
+    font-family: 'Playball', serif;
+    opacity: 0;
+}
+
+#love-story-desc-sec6 {
+    font-family: 'Elsie', serif;
+    font-size: 2.5vh;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    #footageText {
+        margin-bottom: 3% !important;
+    }
+
+    #footageVideo {
+        width: 85%;
+        padding: 0 0;
+    }
+}
+
+
+/* Section 7 */
+.digiEnve {
+    background-image: url('/tema1/bg/geometric-bg.png');
+    background-color: black;
+    padding: 3% 0;
+}
+
+label {
+    font-family: 'Playball', serif;
+}
+
+#wedding-gift-text-sec7 {
+    font-family: 'Playball', serif;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    #wedding-gift-text-sec7 {
+        font-family: 'Playball', serif;
+        opacity: 0;
+        margin-top: 2% !important;
+    }
+}
+
+#wedding-gift-subtext-sec7 {
+    font-family: 'Elsie', serif;
+    font-style: italic;
+    opacity: 0;
+}
+
+#wedding-gift-form-text {
+    font-family: 'Playball', serif;
+}
+
+@media screen and (max-width: 768px) {
+    #wedding-gift-subtext-sec7 {
+        font-family: 'Elsie', serif;
+        font-style: italic;
+        font-size: 3vh;
+        opacity: 0;
+        width: 85% !important;
+    }
+
+    .weddingWishContainer {
+        flex-direction: column-reverse;
+    }
+}
+
+
+
+.weddingWishLog {
+    max-height: 60vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    opacity: 0;
+}
+
+.weddingWishLog::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.weddingWishLog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.weddingWishLog::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+#wedding-wish-text-sec7 {
+    font-family: 'Playball', serif;
+}
+
+#weddingWishTextSec7 {
+    font-family: 'Playball', serif;
+}
+
+#weddingWishUserName {
+    font-family: 'Playball', serif;
+    font-size: 4vh;
+    font-style: italic;
+}
+
+#weddingWishTimestamp {
+    font-family: 'Playball', serif;
+    font-size: 2vh;
+    color: #EBB760 !important;
+}
+
+#weddingWishUserMessage {
+    font-family: 'Playball', serif;
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.coupleQuote {
+    padding: 0 0;
+}
+
+#couple-quote-sec7 {
+    font-family: 'Playball', serif;
+    font-style: italic;
+    font-size: 2.7vh;
+    opacity: 0;
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+
+#coupleWeddingDate {
+    font-family: 'Playball', serif;
+    font-style: italic;
+    color: white !important;
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 2.5%;
+    opacity: 0;
+}
+
+#coupleName {
+    font-family: 'Italianno', cursive;
+    color: white !important;
+    text-align: center;
+    font-size: 0vh;
+    opacity: 0;
+}
+
+.licensePart #licenseText {
+    font-size: 2.2vh;
+    font-family: 'Elsei', serif;
+    color: rgba(255, 255, 255, 0.541) !important;
+    text-align: center;
+}
+
+.music-box {
+    width: 20%;
+    margin: 7%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.music-box-rotating {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
