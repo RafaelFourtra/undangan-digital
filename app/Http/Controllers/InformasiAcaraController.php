@@ -41,7 +41,7 @@ class InformasiAcaraController extends Controller
         return response()->json(['code' => 0]);
       }
     } else {
-      $query = TemaTransaksiModel::where('id', $idUser)->update([
+      $query = TemaTransaksiModel::where('user_id', $idUser)->update([
         'tema_id' => $request->selectedThemes,
       ]);
 
@@ -85,17 +85,17 @@ class InformasiAcaraController extends Controller
   {
     $user = Auth::user();
     $idUser = $user->id;
-    $checkDataMusik = MusikTransaksiModel::where('id', $idUser)->first();
+    $checkDataMusik = MusikTransaksiModel::where('user_id', $idUser)->first();
 
     $request->validate([
-      'musik_id' => 'required',
+      'selectedMusic' => 'required',
     ]);
 
     if ($checkDataMusik === null) {
       $query = MusikTransaksiModel::create([
         'user_id' => $idUser,
         'musik_id' => $request->selectedMusic,
-      ]);
+      ]); 
 
       if ($query) {
         return response()->json(['code' => 1]);
@@ -228,7 +228,6 @@ class InformasiAcaraController extends Controller
         'lokasiresepsi' => $request->lokasiresepsi,
         'lokasiakadnikah' => $request->lokasiakadnikah,
         'livestream' => $request->livestream,
-        'googlemaps' => $request->googlemaps,
         'googlemapsresepsi' => $request->googlemapsresepsi,
         'googlemapspernikahan' => $request->googlemapspernikahan,
       ]);

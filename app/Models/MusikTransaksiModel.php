@@ -11,4 +11,8 @@ class MusikTransaksiModel extends Model
 
     protected $table = 'musik_t';
     protected $guarded = [];
+
+    public function musikMaster() {
+        return $this->belongsTo(MusikModel::class, 'musik_id', 'id');
+    }
 }

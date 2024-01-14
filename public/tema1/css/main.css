@@ -30,7 +30,7 @@
 
 * {
     text-decoration: none !important;
-    color: transparent !important;
+    box-sizing: border-box;
 }
 
 body {
@@ -69,7 +69,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('https://media-cdn.t24.com.tr/media/library/2022/04/1650176049640-dugun.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(50%);
@@ -140,6 +139,90 @@ body {
     font-family: 'Playball', serif;
     font-weight: 400;
     opacity: 0;
+}
+
+.overlay-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-container .overlayImage {
+    position: absolute;
+    top: 46.5%;
+    left: 46.5%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-container .ornament {
+    max-width: 1000px;
+    max-height: 1000px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    .overlay-container .ornament {
+        max-width: 450px;
+        max-height: 450px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .overlay-container .ornament {
+        max-width: 470px;
+        max-height: 470px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    #groomProfileImage,
+    #brideProfileImage {
+        width: 90% !important;
+        height: 90% !important;
+        max-width: none;
+    }
+
+    .groom-information {
+        text-align: center !important;
+    }
+
+    .bride-information,
+    .bride-information h1,
+    .bride-information h3,
+    .bride-information h4 {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 601px) {
+
+    #groomProfileImage,
+    #brideProfileImage {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #bible-verse-sec2 {
+        font-size: 6vh;
+    }
+
+    #groom-name,
+    #bride-name {
+        font-size: 6vh;
+    }
+}
+
+
+#groomProfileImage,
+#brideProfileImage {
+    width: 505.11px;
+    height: 757.66px;
+    object-fit: cover;
 }
 
 #groom-name,
@@ -256,13 +339,12 @@ body {
 }
 
 .event-detail-box {
-    background-image: url('/tema1/bg/geometric-bg.png');
+    background-image: url('/Template One/asset/bg/geometric-bg.png');
     padding: 5% 0;
 }
 
 #liveStreamingText {
     font-family: 'Playball', serif;
-    font-size: 6.5vh;
     color: #EBB760 !important;
     opacity: 0;
 }
@@ -422,9 +504,51 @@ body {
     opacity: 0;
 }
 
-.couple-gallery img {
-    max-width: 100%;
-    max-height: 100%;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin: 0 -4px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+    margin-bottom: 5%;
+}
+
+.column img {
+    margin-top: 8px;
+    margin-bottom: 5%;
+    width: 95%;
+    height: 25%;
+    /* filter: grayscale(1) brightness(0.5); */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    object-fit: cover;
+}
+
+.column img:hover {
+    filter: grayscale(0);
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        margin-bottom: auto !important;
+    }
+
+    .column img {
+        filter: grayscale(0) brightness(1);
+        display: block;
+        margin: 5.5% auto;
+        margin-top: 2.5% !important;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -478,10 +602,44 @@ body {
     }
 }
 
+/* Section 9 - Instagram Wedding Filter */
+@media (max-width: 768px) {
+    .instagramWeddingFilterWrapper {
+        width: 75% !important;
+    }
+
+    .instagramWeddingFilterHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 5vh !important;
+        font-weight: 400;
+    }
+
+    .instagramWeddingFilterHeading {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.5vh !important;
+        font-weight: 500;
+    }
+}
+
+.instagramWeddingFilterWrapper {
+    width: 50%;
+}
+
+.instagramWeddingFilterHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7.5vh;
+    font-weight: 400;
+}
+
+.instagramWeddingFilterHeading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5vh;
+    font-weight: 500;
+}
 
 /* Section 7 */
 .digiEnve {
-    background-image: url('/tema1/bg/geometric-bg.png');
+    background-image: url('/Template One/asset/bg/geometric-bg.png');
     background-color: black;
     padding: 3% 0;
 }
@@ -521,13 +679,17 @@ label {
         opacity: 0;
         width: 85% !important;
     }
+}
 
-    .weddingWishContainer {
-        flex-direction: column-reverse;
+@media screen and (max-width: 768px) {
+    .weddingGiftWrappersz {
+        width: 75% !important;
     }
 }
 
-
+.weddingGiftWrappersz {
+    width: 50%;
+}
 
 .weddingWishLog {
     max-height: 60vh;
@@ -633,4 +795,270 @@ label {
     100% {
         transform: rotate(360deg);
     }
+}
+
+/* RSVP */
+.rsvp {
+    display: block;
+    margin-bottom:  130px;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4='); */
+}
+
+.rsvpWrapper {
+    padding: 2.5%;
+    width: 54%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.rsvpHeadingText {
+    font-family: 'Anglecia';
+    text-align: center;
+    color: #EBB760 !important;
+}
+
+.rsvpSubHeadingText {
+    font-family: 'Anglecia';
+    text-align: center;
+    color: white !important;
+    margin-bottom: 7vh;
+}
+
+.rsvpButton {
+    padding: 50%;
+    cursor: pointer;
+    background: #212529;
+    color: white !important;
+    width: 25px;
+    height: 15px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rsvpButton:hover {
+    background: rgb(39, 39, 39);
+}
+
+.peopleYouBringInput {
+    width: 100%;
+    text-align: center;
+    color: black !important;
+}
+
+.peopleYouBringInput:focus {
+    text-align: center;
+    color: black !important;
+}
+
+.rsvpConfirmButton {
+    background-color: #212529;
+    color: white !important;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    transition: .2s ease-in-out;
+    width: 100%;
+}
+
+.rsvpConfirmButton:hover {
+    background-color: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+}
+
+/* Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .rsvp {
+        width: 90%;
+        display: block;
+        margin: 15% auto;
+    }
+
+    .rsvpWrapper {
+        padding: 2.5%;
+        width: auto;
+        display: block;
+        margin-bottom: 130px;
+    }
+
+    .rsvpHeadingText {
+        font-family: 'Anglecia';
+        text-align: center;
+        color: #794b28;
+    }
+
+    .rsvpButton {
+        padding: 100% !important;
+        margin: auto;
+        cursor: pointer;
+        background: #ce834a;
+        color: white;
+        width: 25px;
+        height: auto !important;
+        text-align: center;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .rsvp {
+        width: 90%;
+        display: block;
+        margin: 15% auto;
+    }
+
+    .rsvpWrapper {
+        padding: 2.5%;
+        width: auto;
+        display: block;
+        margin-bottom: 130px;
+    }
+
+    .rsvpHeadingText {
+        font-family: 'Anglecia';
+        text-align: center;
+        color: #794b28;
+    }
+
+    .rsvpButton {
+        padding: 100% !important;
+        margin: auto;
+        cursor: pointer;
+        background: #ce834a;
+        color: white;
+        width: 25px;
+        height: auto !important;
+        text-align: center;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.15rem;
+    color: #000 !important;
+    z-index: 999 !important;
+}
+
+.select-button {
+    width: 100%;
+    font-size: 1.15rem;
+    background-color: #fff;
+    padding: 0.675em 1em;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    color: black !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-value {
+    text-align: left;
+}
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: transform ease-in-out 0.3s;
+}
+
+.select-dropdown {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: 0.5s ease;
+
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.select-dropdown:focus-within {
+    box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+}
+
+.select-dropdown li {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown li label {
+    width: 100%;
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown::-webkit-scrollbar {
+    width: 7px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.select-dropdown li:hover,
+.select-dropdown input:checked~label {
+    background-color: #f2f2f2;
+}
+
+.select-dropdown input:focus~label {
+    background-color: #dfdfdf;
+}
+
+.select-dropdown input[type="radio"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.custom-select.active .arrow {
+    transform: rotate(180deg);
+}
+
+.custom-select.active .select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
 }

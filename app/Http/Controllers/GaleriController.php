@@ -94,7 +94,10 @@ class GaleriController extends Controller
 
     public function get()
     {
-        $data = GaleriModel::all();
+        $user = Auth::user();
+        $idUser = $user->id;
+
+        $data = GaleriModel::where('user_id', $idUser)->get();
 
         return response()->json(compact('data'));
     }

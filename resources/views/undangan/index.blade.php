@@ -67,8 +67,8 @@
                                                             class="fa-regular fa-eye"></i> Publikasi</p>
                                                     <div class="form-check form-switch">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="publikasi-checkbox">
-                                                        {{-- @if ($data && $data->is_protokol == 1) checked @endif> --}}
+                                                            id="publikasi-checkbox"
+                                                        @if ($order && $order->status == 1) checked @endif>
                                                     </div>
                                                 </div>
                                             </a>

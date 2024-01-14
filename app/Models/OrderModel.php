@@ -12,7 +12,7 @@ class OrderModel extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'order_t';
-    protected $fillable = ['user_id', 'admin_id', 'domain', 'paket', 'harga', 'expired', 'status', 'tanggal_order'];
+    protected $guarded = [];
 
     public function User(): HasOne
     {

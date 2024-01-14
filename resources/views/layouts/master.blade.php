@@ -202,6 +202,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
  
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{ asset('assets/vendors/jquery-toast-plugin-master/src/jquery.toast.js') }}"></script>
 
     @yield('script')
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('group');
             $table->string('whatsapp');
             $table->string('jumlah');
+            $table->string('jumlahkehadiran')->nullable();
             $table->enum('status', ['Menunggu', 'Hadir', 'Tidak Hadir'])->default('Menunggu');
             $table->timestamps();
         });

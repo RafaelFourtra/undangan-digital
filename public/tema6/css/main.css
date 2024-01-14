@@ -1,0 +1,2818 @@
+/* Style */
+.behind {
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.openingSlide {
+    z-index: 1;
+    transition: all 1s ease-in-out;
+    height: 100vh;
+    overflow: hidden !important;
+    position: relative;
+}
+
+.openingSlide .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover !important;
+    object-position: center !important;
+    filter: brightness(35%);
+    animation-name: openingSlideBackgroundAnimation;
+    animation-duration: 3s;
+    transition: ease-in;
+    /* opacity: 0; */
+}
+
+.openingSlide .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 8% 0;
+}
+
+.openingSlide.opened {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.coupleNameOpeningSlide {
+    font-family: 'Anglecia';
+    color: white;
+    font-size: 10vh;
+    text-transform: uppercase;
+}
+
+.weddingDateOpeningSlide {
+    font-family: 'Anglecia';
+    color: white;
+    font-size: 4.5vh;
+    text-transform: capitalize;
+}
+
+.toWhoOpeningSlide {
+    font-family: 'Ebrima', sans-serif;
+    color: white;
+    font-size: 2.5vh;
+}
+
+.openInvitationButtonOpeningSlide {
+    background-color: white;
+    font-family: 'Ebrima', sans-serif;
+    font-weight: 500;
+    transition: .2s ease-in-out;
+}
+
+.openInvitationButtonOpeningSlide:hover {
+    background-color: rgb(145, 145, 145);
+    color: white;
+}
+
+/* OpeningSlide Reponsive Setup */
+@media only screen and (max-width: 390px) {
+    .coupleNameOpeningSlide {
+        font-family: 'Anglecia';
+        color: white;
+        font-size: 5.5vh;
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .coupleNameOpeningSlide {
+        font-family: 'Anglecia';
+        color: white;
+        font-size: 5.5vh;
+        text-transform: uppercase;
+    }
+}
+
+/* Section One */
+.sectionOne {
+    background-color: #FFE1D0;
+}
+
+.sectionOneTitleText {
+    font-family: 'Anglecia';
+    font-size: 3.5vh;
+    text-align: center;
+    padding: 3% 0;
+}
+
+.sectionOneCoupleImageContainer {
+    position: relative;
+}
+
+.sectionOneCoupleImageBorderOrnament {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    width: 132vh;
+    height: 66vh;
+    top: 154.5%;
+    left: 50%;
+    transform: translate(-50%, -145%);
+    z-index: 999 !important;
+}
+
+.sectionOneCoupleImage {
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    width: 120vh;
+    height: 60vh;
+}
+
+.sectionOneCoupleHashtag {
+    color: rgb(90, 90, 90);
+    text-align: center;
+    font-family: 'Ebrima';
+    font-size: 2.2vh;
+    padding: 2.5% 0 0 0;
+}
+
+.sectionOneCoupleName {
+    font-family: 'Anglecia';
+    font-size: 8vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sectionOneCoupleWeddingDate {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 1.5%;
+}
+
+/* Section One Reponsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionOneTitleText {
+        font-family: 'Anglecia';
+        font-size: 4vh;
+        text-align: center;
+        padding: 3% 0;
+    }
+
+    .sectionOneCoupleImageBorderOrnament {
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        width: 44.5vh;
+        height: 22vh;
+        top: 155%;
+        left: 50%;
+        transform: translate(-50%, -145%);
+        z-index: 999 !important;
+    }
+
+    .sectionOneCoupleImage {
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        object-position: center;
+        width: 50vh;
+        height: 30vh;
+    }
+
+    .sectionOneCoupleHashtag {
+        color: rgb(90, 90, 90);
+        text-align: center;
+        font-family: 'Ebrima';
+        font-size: 2.5vh;
+        text-transform: uppercase;
+        padding: 1.5% 0 0 0;
+    }
+
+    .sectionOneCoupleName {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .sectionOneCoupleWeddingDate {
+        font-family: 'Anglecia';
+        font-size: 2.5vh;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 1.5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionOneTitleText {
+        font-family: 'Anglecia';
+        font-size: 4vh;
+        text-align: center;
+        padding: 3% 0;
+    }
+
+    .sectionOneCoupleImageBorderOrnament {
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        width: 44.5vh;
+        height: 22vh;
+        top: 155%;
+        left: 50%;
+        transform: translate(-50%, -145%);
+        z-index: 999 !important;
+    }
+
+    .sectionOneCoupleImage {
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        object-position: center;
+        width: 40vh;
+        height: 20vh;
+    }
+
+    .sectionOneCoupleHashtag {
+        color: rgb(90, 90, 90);
+        text-align: center;
+        font-family: 'Ebrima';
+        font-size: 2vh;
+        text-transform: uppercase;
+        padding: 1.5% 0 0 0;
+    }
+
+    .sectionOneCoupleName {
+        font-family: 'Anglecia';
+        font-size: 4vh;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .sectionOneCoupleWeddingDate {
+        font-family: 'Anglecia';
+        font-size: 2vh;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 1.5%;
+    }
+}
+
+/* Divider One */
+.dividerOne {
+    background-color: #EFA66F;
+}
+
+.dividerOne img {
+    display: block;
+    margin: 0 auto;
+    filter: invert(100%);
+    width: 25%;
+    padding: 0;
+}
+
+/* Divider One Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .dividerOne img {
+        display: block;
+        margin: 0 auto;
+        filter: invert(100%);
+        width: 50%;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dividerOne img {
+        display: block;
+        margin: 0 auto;
+        filter: invert(100%);
+        width: 50%;
+        padding: 0;
+    }
+}
+
+/* Section Two */
+.sectionTwo .container {
+    padding: 10% 0 3% 0;
+    overflow-x: hidden;
+}
+
+.groomContainer,
+.brideContainer {
+    position: relative;
+}
+
+.sectionTwoTopOrnament {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -145%);
+    /* Untuk menggeser posisi elemen ke tengah-tengah */
+    z-index: 1;
+}
+
+.sectionTwoGroomAndBrideDivider {
+    font-family: 'Anglecia';
+    font-size: 10vh;
+    color: #7c4b25;
+}
+
+/* Groom */
+.groomImageContainer {
+    width: 35vh;
+    height: 35vh;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sectionTwoGroomImage {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    border: .9vh solid #ce834a;
+    border-style: double;
+    padding: 1.4%;
+}
+
+/* Bride */
+.brideImageContainer {
+    width: 35vh;
+    height: 35vh;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sectionTwoBrideImage {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    border: .9vh solid #ce834a;
+    border-style: double;
+    padding: 1.4%;
+}
+
+/* Grrom & Bride Profile */
+.sectionTwoGroomName,
+.sectionTwoBrideName {
+    font-family: 'Anglecia';
+    font-size: 6.5vh;
+    color: #7c4b25;
+    text-align: center;
+}
+
+.sectionTwoGroomParent,
+.sectionTwoBrideParent {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+    font-weight: normal;
+    text-align: center;
+}
+
+.coupleInstagramId {
+    margin-top: 17px;
+    font-size: 2.1vh;
+    text-align: center;
+}
+
+.instagram-link {
+    text-decoration: none;
+     color: white; 
+     background-color:#7C4B25; 
+     padding:5px; 
+     border-radius:8px;
+}
+
+.instagram-link:hover {
+    background-color: white; /* Ganti warna latar belakang hover sesuai keinginan Anda */
+    color: #7C4B25; /* Ganti warna teks hover sesuai keinginan Anda */
+    border: 1px solid #7C4B25;
+  }
+
+/* Section Two Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionTwo .container {
+        padding: 25% 0;
+    }
+
+    .sectionTwoTopOrnament {
+        width: 30%;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -145%);
+        z-index: 1;
+    }
+
+    .sectionTwoGroomAndBrideDivider {
+        font-family: 'Anglecia';
+        font-size: 10vh;
+        color: #7c4b25;
+        padding: 8.5% 0;
+        padding-bottom: 12%;
+    }
+
+    /* Grrom & Bride Profile */
+    .sectionTwoGroomName,
+    .sectionTwoBrideName {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        color: #7c4b25;
+        text-align: center;
+    }
+
+    .sectionTwoGroomParent,
+    .sectionTwoBrideParent {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2vh;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .coupleInstagramId {
+        font-size: 2.5vh;
+        text-align: center;
+    }
+
+    /* Groom */
+    .groomImageContainer {
+        width: 35vh;
+        height: 35vh;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .sectionTwoGroomImage {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        border: .9vh solid #ce834a;
+        border-style: double;
+        padding: 1%;
+    }
+
+    /* Bride */
+    .brideImageContainer {
+        width: 35vh;
+        height: 35vh;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .sectionTwoBrideImage {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        border: .9vh solid #ce834a;
+        border-style: double;
+        padding: 1%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionTwo .container {
+        padding: 25% 0;
+    }
+
+    .sectionTwoTopOrnament {
+        width: 30%;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -145%);
+        z-index: 1;
+    }
+
+    .sectionTwoGroomAndBrideDivider {
+        font-family: 'Anglecia';
+        font-size: 10vh;
+        color: #7c4b25;
+        padding: 8.5% 0;
+        padding-bottom: 12%;
+    }
+
+    /* Grrom & Bride Profile */
+    .sectionTwoGroomName,
+    .sectionTwoBrideName {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        color: #7c4b25;
+        text-align: center;
+    }
+
+    .sectionTwoGroomParent,
+    .sectionTwoBrideParent {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2vh;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .coupleInstagramId {
+        font-size: 2.5vh;
+        text-align: center;
+    }
+
+    /* Groom */
+    .groomImageContainer {
+        width: 35vh;
+        height: 35vh;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .sectionTwoGroomImage {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        border: .9vh solid #ce834a;
+        border-style: double;
+        padding: 1%;
+    }
+
+    /* Bride */
+    .brideImageContainer {
+        width: 35vh;
+        height: 35vh;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .sectionTwoBrideImage {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        border: .9vh solid #ce834a;
+        border-style: double;
+        padding: 1%;
+    }
+}
+
+
+/* Section Three */
+.sectionThree {
+    background-color: #FFE1D0;
+    padding: 10% 0;
+    padding-top: 4%;
+}
+
+.sectionThreeHeadingText {
+    font-family: 'Anglecia';
+    font-size: 6.5vh;
+    text-align: center;
+    color: #7c4b25;
+}
+
+.loveStoryImageContainer {
+    width: 95%;
+    height: 50vh;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+}
+
+.sectionThreeLoveStoryImage {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.sectionThreeLoveStoryContainer {
+    background-color: white;
+    padding: 3.5%;
+}
+
+.sectionThreeLoveStoryTitle {
+    font-family: 'Anglecia';
+    text-align: center;
+    color: #7c4b25;
+}
+
+.sectionThreeLoveStoryText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+    text-align: center;
+    color: #7c4b25;
+}
+
+/* Section Three Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionThreeHeadingText {
+        font-family: 'Anglecia';
+        font-size: 3.5vh !important;
+        text-align: center;
+        color: #7c4b25;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .sectionThree {
+        background-color: #FFE1D0;
+        padding: 6.5% 0 !important;
+    }
+
+    .reversedLoveStoryRow {
+        flex-direction: column-reverse;
+    }
+
+    .loveStoryImageContainer {
+        width: 75%;
+        height: 50vh;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionThreeLoveStoryContainer {
+        background-color: white;
+        padding: 8.5%;
+        margin: 5.5%;
+        margin-bottom: 0% !important;
+        width: 90%;
+    }
+
+    .sectionThreeLoveStoryTitle {
+        font-family: 'Anglecia';
+        font-size: 3.5vh;
+        text-align: center;
+        margin-bottom: 6.5%;
+    }
+
+    .sectionThreeLoveStoryText {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5vh;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionThreeHeadingText {
+        font-family: 'Anglecia';
+        font-size: 3.5vh;
+        text-align: center;
+        color: #7c4b25;
+    }
+
+    .sectionThree {
+        background-color: #FFE1D0;
+        padding: 6.5% 0;
+    }
+
+    .reversedLoveStoryRow {
+        flex-direction: column-reverse;
+    }
+
+    .loveStoryImageContainer {
+        width: 75%;
+        height: 50vh;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionThreeLoveStoryContainer {
+        background-color: white;
+        padding: 8.5%;
+        margin: 5.5%;
+        margin-bottom: 0% !important;
+        width: 89%;
+    }
+
+    .sectionThreeLoveStoryTitle {
+        font-family: 'Anglecia';
+        font-size: 3.5vh;
+        text-align: center;
+        margin-bottom: 6.5%;
+    }
+
+    .sectionThreeLoveStoryText {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5vh;
+        text-align: center;
+    }
+}
+
+/* Section Four */
+.sectionFour {
+    padding: 5% 3% 5% 4%;
+    display: block;
+    margin: 0 auto;
+}
+
+.sectionFour .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin: 0 -4px;
+}
+
+.sectionFour .column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+    margin-bottom: 5%;
+}
+
+.sectionFour .column img {
+    margin-top: 8px;
+    margin-bottom: 5%;
+    width: 95%;
+    height: 25%;
+    border-radius: 5px;
+    transition: 0.3s linear;
+    object-fit: cover;
+    object-position: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section Four Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionFour {
+        padding: 6%;
+        padding-bottom: 15%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionFour .column img {
+        margin-top: 8px;
+        margin-bottom: 5%;
+        width: 95%;
+        height: 24.3%;
+        border-radius: 5px;
+        transition: 0.3s linear;
+        object-fit: cover;
+        object-position: center !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionFour {
+        padding: 6%;
+        padding-bottom: 15%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionFour .column img {
+        margin-top: 8px;
+        margin-bottom: 5%;
+        width: 95%;
+        height: 24.3%;
+        border-radius: 5px;
+        transition: 0.3s linear;
+        object-fit: cover;
+        object-position: center !important;
+    }
+}
+
+/* Section Five */
+.sectionFive {
+    padding: 5% 0;
+    overflow-x: hidden;
+}
+
+.sectionFiveHighlightTitle {
+    font-family: 'Anglecia';
+    font-size: 6vh;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.sectionFiveVideoWrapper {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.sectionFiveLiveStreamingVid {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sectionFiveLiveStreamingVidText {
+    font-family: 'Anglecia';
+    font-size: 4.5vh;
+    text-align: center;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+/* Section Five Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionFiveVideoWrapper .row {
+        margin-bottom: 0 !important;
+    }
+
+    .sectionFiveHighlightTitle {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .sectionFiveLiveStreamingVid {
+        margin-bottom: 4% !important;
+        margin-top: 0 !important;
+        padding-bottom: 0 !important;
+        width: max-content;
+    }
+
+    .sectionFiveLiveStreamingVidText {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        text-align: center;
+        padding: 0 0;
+        margin: 0 0;
+        margin-bottom: 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionFiveVideoWrapper .row {
+        margin-bottom: 0 !important;
+    }
+
+    .sectionFiveHighlightTitle {
+        font-family: 'Anglecia';
+        font-size: 4vh;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .sectionFiveLiveStreamingVid {
+        margin-bottom: 4% !important;
+        margin-top: 0 !important;
+        padding-bottom: 0 !important;
+        width: -webkit-fill-available;
+    }
+
+    .sectionFiveLiveStreamingVidText {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        text-align: center;
+        padding: 0 0;
+        margin: 0 0;
+        margin-bottom: 10%;
+    }
+}
+
+/* Section Six */
+.sectionSix {
+    background-color: #FFE1D0;
+    padding: 1.5% 0;
+    position: relative;
+}
+
+.sectionSixBackOrnamentColor {
+    background-color: #ce834a;
+    width: 100%;
+    padding: 1.7% 0;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sectionSixCountdownText {
+    font-family: 'Anglecia';
+    font-size: 7.5vh;
+    text-align: center;
+    color: #7c4b25;
+    padding: 4% 0 0 0;
+}
+
+.sectionSixCountdownDateText {
+    font-family: 'Ebrima';
+    font-size: 3vh;
+    font-weight: 500;
+    color: rgba(95, 56, 26, 0.651);
+    text-align: center;
+    padding: 0;
+    margin-bottom: 2%;
+}
+
+.sectionSixCountdownWrapper {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+    z-index: 1 !important;
+    position: relative;
+}
+
+.sectionSixCountdown {
+    font-family: 'Anglecia';
+}
+
+.sectionSixCountdownTime {
+    font-size: 5.5vh;
+    margin: 0;
+    padding: 0;
+}
+
+.sectionSixCountdownSubText {
+    font-size: 2.5vh;
+    margin: 0;
+    padding: 0;
+}
+
+.countdownItem {
+    font-size: 2em;
+    margin: 0 3.5%;
+    padding: 4% 1%;
+    margin-top: 0;
+    position: relative;
+    color: #7c4b25;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.countdownItem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Section Six Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionSixCountdownText {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        text-align: center;
+        color: #7c4b25;
+        padding: 9% 0 0 0 !important;
+    }
+
+    .sectionSixCountdownDateText {
+        font-family: 'Ebrima';
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: rgba(95, 56, 26, 0.651);
+        text-align: center;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 2%;
+    }
+
+    .sectionSixCountdownWrapper {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        z-index: 1 !important;
+        position: relative;
+    }
+
+    .sectionSixCountdown {
+        font-family: 'Anglecia';
+        display: inline-flex;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+
+    .sectionSixCountdownTime {
+        font-size: 2.5vh !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sectionSixCountdownSubText {
+        font-size: 1.3vh !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .countdownItem {
+        font-size: 2em;
+        margin: 0 3.5%;
+        padding: 3.5% 3.5%;
+        margin-top: 0;
+        position: relative;
+        color: #7c4b25;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .countdownItem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .sectionSixBackOrnamentColor {
+        background-color: #ce834a;
+        width: 100%;
+        padding: 1.7% 0;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionSixCountdownText {
+        font-family: 'Anglecia';
+        font-size: 4.5vh;
+        text-align: center;
+        color: #7c4b25;
+        padding: 9% 0 0 0 !important;
+    }
+
+    .sectionSixCountdownDateText {
+        font-family: 'Ebrima';
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: rgba(95, 56, 26, 0.651);
+        text-align: center;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 2%;
+    }
+
+    .sectionSixCountdownWrapper {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        z-index: 1 !important;
+        position: relative;
+    }
+
+    .sectionSixCountdown {
+        font-family: 'Anglecia';
+        display: inline-flex;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+
+    .sectionSixCountdownTime {
+        font-size: 2.5vh !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sectionSixCountdownSubText {
+        font-size: 1.3vh !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .countdownItem {
+        font-size: 2em;
+        margin: 0 3.5%;
+        margin-top: 0;
+        position: relative;
+        color: #7c4b25;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .countdownItem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .sectionSixBackOrnamentColor {
+        background-color: #ce834a;
+        width: 100%;
+        padding: 1.7% 0;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Section Seven */
+.sectionSeven {
+    padding: 5.5%;
+}
+
+.sectionSeven .container {
+    position: relative;
+}
+
+.sectionSeventTopOrnament {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.sectionSevenHeadingText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    color: #7c4b25;
+    text-align: center;
+    padding-top: 8.5%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.sectionSevenResepsiTextDate {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    text-transform: uppercase;
+    color: #7c4b25;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.sectionSeventDividerOrnament {
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sectionSevenResepsiOrnament {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sectionSevenResepsiDate {
+    font-family: 'Ebrima';
+    font-size: 2.5vh;
+    font-weight: 700;
+    text-align: center;
+    margin: 1.5% 0;
+    color: #ce834a;
+}
+
+.sectionSevenResepsiTimeText {
+    font-family: 'Ebrima';
+    font-size: 3.5vh;
+    font-weight: 500;
+    color: #7c4b25;
+    text-align: center;
+}
+
+.sectionSevenResepsiNamePlace {
+    font-family: 'Ebrima';
+    font-size: 2.5vh;
+    font-weight: 600;
+    color: #7c4b25;
+    text-align: center;
+}
+
+.sectionSevenResepsiAddressPlace {
+    font-family: 'Ebrima';
+    font-size: 2.5vh;
+    font-weight: 500;
+    color: #7c4b25;
+    text-align: center;
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Section Seven Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionSeven {
+        padding: 5.5%;
+        padding-top: 15.5%;
+    }
+
+    .sectionSeventTopOrnament {
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .sectionSevenHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        color: #7c4b25;
+        text-align: center;
+        padding-top: 25.5%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .sectionSeventDividerOrnament {
+        width: 95%;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .sectionSevenResepsiOrnament {
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .sectionSevenResepsiAddressPlace {
+        font-family: 'Ebrima';
+        font-size: 2.5vh;
+        font-weight: 500;
+        color: #7c4b25;
+        text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionSeven {
+        padding: 5.5%;
+        padding-top: 15.5%;
+    }
+
+    .sectionSeventTopOrnament {
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .sectionSevenHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        color: #7c4b25;
+        text-align: center;
+        padding-top: 25.5%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .sectionSeventDividerOrnament {
+        width: 95%;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .sectionSevenResepsiOrnament {
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .sectionSevenResepsiAddressPlace {
+        font-family: 'Ebrima';
+        font-size: 2.5vh;
+        font-weight: 500;
+        color: #7c4b25;
+        text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* Section Eight */
+.sectionEight {
+    background-color: #FFE1D0;
+    padding: 5% 0;
+}
+
+.sectionEightLivestreamText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    color: #7c4b25;
+    text-align: center;
+}
+
+.sectionEightLivestreamHashtag {
+    font-family: 'Ebrima';
+    font-size: 3vh;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+/* Section Eight Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionEight {
+        background-color: #FFE1D0;
+        padding: 15% 0;
+    }
+
+    .sectionEightLivestreamText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        color: #7c4b25;
+        text-align: center;
+    }
+
+    .sectionEightLivestreamHashtag {
+        font-family: 'Ebrima';
+        font-size: 3vh;
+        font-weight: 500;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 15%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionEight {
+        background-color: #FFE1D0;
+        padding: 15% 0;
+    }
+
+    .sectionEightLivestreamText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        color: #7c4b25;
+        text-align: center;
+    }
+
+    .sectionEightLivestreamHashtag {
+        font-family: 'Ebrima';
+        font-size: 3vh;
+        font-weight: 500;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 15%;
+    }
+}
+
+
+/* Section Nine */
+.sectionNine {
+    background-color: #FFE1D0;
+    padding: 5% 0;
+    padding-top: 0;
+}
+
+.sectionNineWeddingGiftText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    color: #7c4b25;
+    text-align: center;
+}
+
+.sectionNineWeddingGiftParagraph {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+    font-weight: 500;
+    font-style: italic;
+    color: #7c4b25b9;
+    width: 60%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+.weddingGiftWrapperBox {
+    background-color: white;
+    padding: 1.5% 2.5%;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.sectionNineWeddingGiftHeadingText {
+    text-align: center;
+    font-size: 3vh;
+}
+
+.sectionNineWeddingGiftBankSelect {
+    width: 100%;
+    padding: 2%;
+    border: 1.5px solid black;
+    font-weight: 600;
+}
+
+.sectionNineWeddingGiftBankSelect option {
+    padding: 2%;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.15rem;
+    color: #000;
+}
+
+.select-button {
+    width: 100%;
+    font-size: 1.15rem;
+    background-color: #fff;
+    padding: 0.675em 1em;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-value {
+    text-align: left;
+}
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: transform ease-in-out 0.3s;
+}
+
+.select-dropdown {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: 0.5s ease;
+
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.select-dropdown:focus-within {
+    box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+}
+
+.select-dropdown li {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown li label {
+    width: 100%;
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown::-webkit-scrollbar {
+    width: 7px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.select-dropdown li:hover,
+.select-dropdown input:checked~label {
+    background-color: #f2f2f2;
+}
+
+.select-dropdown input:focus~label {
+    background-color: #dfdfdf;
+}
+
+.select-dropdown input[type="radio"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.custom-select.active .arrow {
+    transform: rotate(180deg);
+}
+
+.custom-select.active .select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.sectionNineWeddingGiftBoxBankName,
+.sectionNineWeddingGiftBoxAccountNumber,
+.sectionNineWeddingGiftAccountName {
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 0;
+    margin: 0;
+    margin-top: 1.5%;
+    /* text-align: center; */
+}
+
+.sectionNineWeddingGiftQRCode {
+    width: 35%;
+    display: block;
+    margin: 3% auto;
+    border: 2px solid black;
+    padding: 0;
+}
+
+.sectionNineWeddingGiftFormHeadingText {
+    font-size: 3vh;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* Section Nine Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionNineWeddingGiftParagraph {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5vh;
+        font-weight: 500;
+        font-style: italic;
+        color: #7c4b25b9;
+        width: 90%;
+        text-align: center;
+        display: block;
+        margin: 7.5% auto;
+    }
+
+    .weddingGiftWrapperBox {
+        background-color: white;
+        padding: 5% 8%;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionNineWeddingGiftHeadingText {
+        text-align: center;
+        font-size: 2.5vh;
+        margin-bottom: 7.5%;
+    }
+
+    .sectionNineWeddingGiftBankSelect {
+        width: 100%;
+        padding: 1.5%;
+        border: 1.5px solid black;
+        font-weight: 600;
+    }
+
+    .sectionNineWeddingGiftBankSelect option {
+        padding: 2%;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .custom-select {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.15rem;
+        color: #000;
+    }
+
+    .select-button {
+        width: 100%;
+        font-size: 1.15rem;
+        background-color: #fff;
+        padding: 0.3em 1em;
+        border: 1px solid #caced1;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+
+    .selected-value {
+        text-align: left;
+    }
+
+    .arrow {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #000;
+        transition: transform ease-in-out 0.3s;
+    }
+
+    .select-dropdown {
+        position: absolute;
+        list-style: none;
+        width: 100%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border: 1px solid #caced1;
+        border-radius: 4px;
+        padding: 10px;
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        transition: 0.5s ease;
+
+        transform: scaleY(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .select-dropdown:focus-within {
+        box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+    }
+
+    .select-dropdown li {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .select-dropdown li label {
+        width: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .select-dropdown::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .select-dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+    }
+
+    .select-dropdown::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 25px;
+    }
+
+    .select-dropdown li:hover,
+    .select-dropdown input:checked~label {
+        background-color: #f2f2f2;
+    }
+
+    .select-dropdown input:focus~label {
+        background-color: #dfdfdf;
+    }
+
+    .select-dropdown input[type="radio"] {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+    }
+
+    .custom-select.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .custom-select.active .select-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+
+    .sectionNineWeddingGiftBoxBankName,
+    .sectionNineWeddingGiftBoxAccountNumber,
+    .sectionNineWeddingGiftAccountName {
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 0;
+        margin: 0;
+        margin-top: 1.5%;
+    }
+
+    .sectionNineWeddingGiftQRCode {
+        width: 75%;
+        display: block;
+        margin: 15% auto;
+        border: 2px solid black;
+        padding: 0;
+    }
+
+    .sectionNineWeddingGiftFormHeadingText {
+        font-size: 2.5vh;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .sectionNineFormControl {
+        margin-bottom: 2.5%;
+    }
+
+    .sectionNineFormControl label {
+        font-weight: 500;
+        font-size: 2vh;
+        margin-bottom: 2%;
+    }
+
+    .sectionNineFormControlInput {
+        width: 100%;
+        padding: 2%;
+        border: 1px solid rgba(0, 0, 0, 0.377);
+    }
+
+    .sectionNineFormControlButtonNext {
+        background-color: #ce834a;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 2%;
+        width: 100%;
+        transition: .2s ease-in-out;
+        margin-top: 4%;
+    }
+
+    .sectionNineFormControlButtonNext:hover {
+        background-color: #794b28;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 2%;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionNineWeddingGiftParagraph {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5vh;
+        font-weight: 500;
+        font-style: italic;
+        color: #7c4b25b9;
+        width: 90%;
+        text-align: center;
+        display: block;
+        margin: 7.5% auto;
+    }
+
+    .weddingGiftWrapperBox {
+        background-color: white;
+        padding: 5% 8%;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionNineWeddingGiftHeadingText {
+        text-align: center;
+        font-size: 2.5vh;
+        margin-bottom: 7.5%;
+    }
+
+    .sectionNineWeddingGiftBankSelect {
+        width: 100%;
+        padding: 1.5%;
+        border: 1.5px solid black;
+        font-weight: 600;
+    }
+
+    .sectionNineWeddingGiftBankSelect option {
+        padding: 2%;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .custom-select {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.15rem;
+        color: #000;
+    }
+
+    .select-button {
+        width: 100%;
+        font-size: 1.15rem;
+        background-color: #fff;
+        padding: 0.3em 1em;
+        border: 1px solid #caced1;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+
+    .selected-value {
+        text-align: left;
+    }
+
+    .arrow {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #000;
+        transition: transform ease-in-out 0.3s;
+    }
+
+    .select-dropdown {
+        position: absolute;
+        list-style: none;
+        width: 100%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border: 1px solid #caced1;
+        border-radius: 4px;
+        padding: 10px;
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        transition: 0.5s ease;
+
+        transform: scaleY(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .select-dropdown:focus-within {
+        box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+    }
+
+    .select-dropdown li {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .select-dropdown li label {
+        width: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .select-dropdown::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .select-dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+    }
+
+    .select-dropdown::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 25px;
+    }
+
+    .select-dropdown li:hover,
+    .select-dropdown input:checked~label {
+        background-color: #f2f2f2;
+    }
+
+    .select-dropdown input:focus~label {
+        background-color: #dfdfdf;
+    }
+
+    .select-dropdown input[type="radio"] {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+    }
+
+    .custom-select.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .custom-select.active .select-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+
+    .sectionNineWeddingGiftBoxBankName,
+    .sectionNineWeddingGiftBoxAccountNumber,
+    .sectionNineWeddingGiftAccountName {
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 0;
+        margin: 0;
+        margin-top: 1.5%;
+    }
+
+    .sectionNineWeddingGiftQRCode {
+        width: 75%;
+        display: block;
+        margin: 15% auto;
+        border: 2px solid black;
+        padding: 0;
+    }
+
+    .sectionNineWeddingGiftFormHeadingText {
+        font-size: 2.5vh;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .sectionNineFormControl {
+        margin-bottom: 2.5%;
+    }
+
+    .sectionNineFormControl label {
+        font-weight: 500;
+        font-size: 2vh;
+        margin-bottom: 2%;
+    }
+
+    .sectionNineFormControlInput {
+        width: 100%;
+        padding: 2%;
+        border: 1px solid rgba(0, 0, 0, 0.377);
+    }
+
+    .sectionNineFormControlButtonNext {
+        background-color: #ce834a;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 2%;
+        width: 100%;
+        transition: .2s ease-in-out;
+        margin-top: 4%;
+    }
+
+    .sectionNineFormControlButtonNext:hover {
+        background-color: #794b28;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 2%;
+        width: 100%;
+    }
+}
+
+/* Divider */
+.dividerTenHeadingText {
+    font-size: 3.5vh;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    padding-top: 1.5%;
+}
+
+.dividerTenHeadingSubText {
+    font-size: 7.5vh;
+    font-family: 'Anglecia';
+    text-align: center;
+    color: white;
+    padding-bottom: 1.5%;
+}
+
+/* Health Protocol Divider Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .dividerTenHeadingText {
+        font-size: 3vh;
+        font-weight: 400;
+        text-align: center;
+        color: white;
+        padding: 5.5% 2.5%;
+        padding-bottom: 2.5%;
+    }
+
+    .dividerTenHeadingSubText {
+        font-size: 4.5vh;
+        font-family: 'Anglecia';
+        text-align: center;
+        color: white;
+        padding: 5.5% 1.8%;
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dividerTenHeadingText {
+        font-size: 2vh;
+        font-weight: 400;
+        text-align: center;
+        color: white;
+        padding: 5.5% 2.5%;
+        padding-bottom: 2.5%;
+    }
+
+    .dividerTenHeadingSubText {
+        font-size: 4vh;
+        font-family: 'Anglecia';
+        text-align: center;
+        color: white;
+        padding: 5.5% 1.8%;
+        padding-top: 0;
+    }
+}
+
+/* Section Ten */
+.sectionTen .container {
+    width: 75%;
+    padding: 5% 0;
+}
+
+.sectionTenHealthProtocolImage {
+    filter: invert(65%);
+    width: 45%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 15%;
+}
+
+.sectionTenHealthProtocolImageSubText {
+    font-family: 'Anglecia';
+    font-size: 4.5vh;
+    text-align: center;
+    color: #7c4b25;
+}
+
+/* Section Ten Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionTen .container {
+        width: 85%;
+        padding: 5% 0;
+    }
+
+    .sectionTenHealthProtocolImage {
+        filter: invert(65%);
+        width: 45%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 15%;
+    }
+
+    .sectionTenHealthProtocolImageSubText {
+        font-family: 'Anglecia';
+        font-size: 2.5vh;
+        text-align: center;
+        color: #7c4b25;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionTen .container {
+        width: 85%;
+        padding: 5% 0;
+    }
+
+    .sectionTenHealthProtocolImage {
+        filter: invert(65%);
+        width: 45%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 15%;
+    }
+
+    .sectionTenHealthProtocolImageSubText {
+        font-family: 'Anglecia';
+        font-size: 2.5vh;
+        text-align: center;
+        color: #7c4b25;
+    }
+}
+
+/* Section Eleven */
+.sectionEleven {
+    padding-top: 5%;
+}
+
+.sectionElevenWeddingWishHeadingText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    text-align: center;
+    color: #7c4b25;
+    margin-bottom: 3.5%;
+}
+
+.sectionElevenWeddingWishBoxWrapper {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.sectionElevenFormControl {
+    margin-bottom: 2.5%;
+}
+
+.sectionElevenFormControlInput {
+    width: 100%;
+    padding: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.377);
+}
+
+.sectionElevenFormControlButton {
+    background-color: #ce834a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    transition: .2s ease-in-out;
+}
+
+.sectionElevenFormControlButton:hover {
+    background-color: #794b28;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+}
+
+.sectionElevenWeddingWishMessageBox {
+    width: 60%;
+    max-height: 60vh;
+    overflow-y: scroll;
+    display: block;
+    margin: 2% auto;
+}
+
+.sectionElevenWeddingWishMessageBox::-webkit-scrollbar {
+    width: 12px;
+}
+
+.sectionElevenWeddingWishMessageBox::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.sectionElevenWeddingWishMessageBox::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+.sectionElevenWeddingWishMessage {
+    margin-bottom: 6.5%;
+}
+
+.sectionElevenWeddingWishSenderName {
+    font-size: 3vh;
+    font-weight: 700;
+    color: #794b28;
+}
+
+.sectionElevenWeddingWishMessageText {
+    font-size: 3vh;
+    font-weight: 400;
+    width: 100%;
+}
+
+.sectionElevenWeddingWishTimestampText {
+    font-size: 2vh;
+}
+
+.sectionElevenWeddingWishMessageButton {
+    background-color: #ce834a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    width: 60%;
+    display: block;
+    margin: 3% auto;
+    transition: .2s ease-in-out;
+}
+
+.sectionElevenWeddingWishMessageButton:hover {
+    background-color: #794b28;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    width: 60%;
+    display: block;
+    margin: 3% auto;
+}
+
+/* Section Eleven Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionElevenWeddingWishHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-align: center;
+        color: #7c4b25;
+        margin-bottom: 10.5%;
+    }
+
+    .sectionElevenWeddingWishBoxWrapper {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionElevenWeddingWishMessageBox {
+        width: 90%;
+        max-height: 60vh;
+        overflow-y: scroll;
+        display: block;
+        margin: 10% auto;
+    }
+
+    .sectionElevenWeddingWishMessage {
+        margin-bottom: 8.5%;
+    }
+
+    .sectionElevenWeddingWishSenderName {
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: #794b28;
+    }
+
+    .sectionElevenWeddingWishMessageText {
+        font-size: 2.2vh;
+        font-weight: 400;
+        width: 100%;
+    }
+
+    .sectionElevenWeddingWishTimestampText {
+        font-size: 1.7vh;
+    }
+
+    .sectionElevenWeddingWishMessageButton {
+        background-color: #ce834a;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        width: 90%;
+        display: block;
+        margin: 7% auto;
+        transition: .2s ease-in-out;
+    }
+
+    .sectionElevenWeddingWishMessageButton:hover {
+        background-color: #794b28;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        width: 60%;
+        display: block;
+        margin: 3% auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionElevenWeddingWishHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-align: center;
+        color: #7c4b25;
+        margin-bottom: 10.5%;
+    }
+
+    .sectionElevenWeddingWishBoxWrapper {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sectionElevenWeddingWishMessageBox {
+        width: 90%;
+        max-height: 60vh;
+        overflow-y: scroll;
+        display: block;
+        margin: 10% auto;
+    }
+
+    .sectionElevenWeddingWishMessage {
+        margin-bottom: 8.5%;
+    }
+
+    .sectionElevenWeddingWishSenderName {
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: #794b28;
+    }
+
+    .sectionElevenWeddingWishMessageText {
+        font-size: 2.2vh;
+        font-weight: 400;
+        width: 100%;
+    }
+
+    .sectionElevenWeddingWishTimestampText {
+        font-size: 1.7vh;
+    }
+
+    .sectionElevenWeddingWishMessageButton {
+        background-color: #ce834a;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        width: 90%;
+        display: block;
+        margin: 7% auto;
+        transition: .2s ease-in-out;
+    }
+
+    .sectionElevenWeddingWishMessageButton:hover {
+        background-color: #794b28;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        width: 60%;
+        display: block;
+        margin: 3% auto;
+    }
+}
+
+/* Section Twelve */
+.sectionTwelve {
+    background-color: #ce834a;
+    padding: 4.5% 0;
+    padding-bottom: 0;
+}
+
+.sectionTwelveCoupleName {
+    font-family: 'Anglecia';
+    font-size: 8.5vh;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+.sectionTwelveCoupleDate {
+    font-size: 3.5vh;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(231, 231, 231);
+    margin: 0;
+    padding: 0;
+}
+
+.sectionTwelveBottomOrnament {
+    width: 35%;
+    filter: invert(100%);
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sectionTwelvePoweredByBox {
+    background-color: #f1f1f1;
+    padding: .2% 0;
+}
+
+.sectionTwelvePoweredByText {
+    font-family: 'Anglecia';
+    font-size: 2.5vh;
+    font-weight: 600;
+    text-align: center;
+    color: #7c4b25;
+    margin-top: .8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section Twelve Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .sectionTwelveCoupleName {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+    }
+
+    .sectionTwelveCoupleDate {
+        font-size: 2.5vh;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        color: rgb(231, 231, 231);
+        margin: 0;
+        padding: 0;
+    }
+
+    .sectionTwelveBottomOrnament {
+        width: 65%;
+        filter: invert(100%);
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .sectionTwelvePoweredByBox {
+        background-color: #f1f1f1;
+        padding: .2% 0;
+    }
+
+    .sectionTwelvePoweredByText {
+        font-family: 'Anglecia';
+        font-size: 2.5vh;
+        font-weight: 600;
+        text-align: center;
+        color: #7c4b25;
+        margin-top: 1.5% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionTwelveCoupleName {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+    }
+
+    .sectionTwelveCoupleDate {
+        font-size: 2.5vh;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        color: rgb(231, 231, 231);
+        margin: 0;
+        padding: 0;
+    }
+
+    .sectionTwelveBottomOrnament {
+        width: 65%;
+        filter: invert(100%);
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .sectionTwelvePoweredByBox {
+        background-color: #f1f1f1;
+        padding: .2% 0;
+    }
+
+    .sectionTwelvePoweredByText {
+        font-family: 'Anglecia';
+        font-size: 2.5vh;
+        font-weight: 600;
+        text-align: center;
+        color: #7c4b25;
+        margin-top: 1.5% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+/* Wedding Filter */
+.weddingFilter {
+    background-color: #FFE1D0;
+}
+
+.weddingFilterHeadingText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    text-align: center;
+    color: #794b28;
+    margin-bottom: 3%;
+}
+
+.weddingFilterPhotos {
+    display: block;
+    margin: 0 auto;
+    width: 25%;
+}
+
+.weddingFilterButtonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weddingFilterButton {
+    background-color: #ce834a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    transition: .2s ease-in-out;
+    margin: 3% 0;
+}
+
+.weddingFilterButton:hover {
+    background-color: #794b28;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+}
+
+/* Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .weddingFilterHeadingText {
+        font-family: 'Anglecia';
+        font-size: 3.5vh;
+        text-align: center;
+        color: #794b28;
+        margin-bottom: 3%;
+        padding-top: 10%;
+    }
+
+    .weddingFilterPhotos {
+        display: block;
+        margin: 0 auto;
+        width: 55%;
+    }
+
+    .weddingFilterButton {
+        background-color: #ce834a;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        transition: .2s ease-in-out;
+        margin: 3% 0;
+        margin-bottom: 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .weddingFilterHeadingText {
+        font-family: 'Anglecia';
+        font-size: 3vh;
+        text-align: center;
+        color: #794b28;
+        margin-bottom: 3%;
+        padding-top: 10%;
+    }
+
+    .weddingFilterPhotos {
+        display: block;
+        margin: 0 auto;
+        width: 55%;
+    }
+
+    .weddingFilterButton {
+        background-color: #ce834a;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        transition: .2s ease-in-out;
+        margin: 3% 0;
+        margin-bottom: 10%;
+    }
+}
+
+/* RSVP */
+.rsvp {
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+    padding: 2.5%;
+    background-color: #f2f2f2;
+}
+
+.rsvpHeadingText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    text-align: center;
+    color: #794b28;
+}
+
+.rsvpSubHeadingText {
+    font-family: 'Anglecia';
+    font-size: 3vh;
+    text-align: center;
+    color: #794b28;
+    margin-bottom: 7vh;
+}
+
+.rsvpButton {
+    padding: 50%;
+    cursor: pointer;
+    background: #ce834a;
+    color: white;
+    width: 25px;
+    height: 15px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rsvpButton:hover {
+    background: black;
+}
+
+.peopleYouBringInput {
+    text-align: center;
+}
+
+.rsvpConfirmButton {
+    background-color: #ce834a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    transition: .2s ease-in-out;
+}
+
+.rsvpConfirmButton:hover {
+    background-color: #794b28;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+}
+
+/* Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .rsvp {
+        width: 90%;
+        display: block;
+        margin: 15% auto;
+    }
+
+    .rsvpHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-align: center;
+        color: #794b28;
+        margin-bottom: 4.5vh;
+    }
+
+    .rsvpButton {
+        padding: 100% !important;
+        margin: auto;
+        cursor: pointer;
+        background: #ce834a;
+        color: white;
+        width: 25px;
+        height: auto !important;
+        text-align: center;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .rsvp {
+        width: 90%;
+        display: block;
+        margin: 15% auto;
+    }
+
+    .rsvpHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-align: center;
+        color: #794b28;
+        margin-bottom: 2.5vh;
+    }
+
+    .rsvpButton {
+        padding: 100% !important;
+        margin: auto;
+        cursor: pointer;
+        background: #ce834a;
+        color: white;
+        width: 25px;
+        height: auto !important;
+        text-align: center;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+.music-box {
+    width: 20%;
+    margin: 7%;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.music-box-rotating {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

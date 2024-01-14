@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('harga');
             $table->dateTime('tanggal_order');
             $table->date('expired');
-            $table->enum('status', ['0', '1'])->default('0');
+            $table->enum('status', [0, 1]);
             $table->timestamps();
             $table->softDeletes();
         });

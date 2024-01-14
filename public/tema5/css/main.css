@@ -1,0 +1,1458 @@
+.relativeBox {
+    position: relative !important;
+}
+
+body {
+    overflow-y: scroll; /* Menampilkan scrollbar sumbu Y pada elemen body */
+    scrollbar-width: thin; /* Mengatur lebar scrollbar */
+    scrollbar-color: transparent transparent; /* Menyembunyikan warna thumb dan track scrollbar */
+}
+
+body::-webkit-scrollbar {
+    width: 0px; /* Mengatur lebar scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Menyembunyikan thumb (bagian yang dapat digerakkan) scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Menyembunyikan track scrollbar */
+}
+
+
+
+.behind {
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.openingSlide {
+    z-index: 1;
+    transition: all 1.3s ease-out;
+    height: 100vh;
+    overflow: hidden !important;
+    position: relative;
+}
+
+.openingSlide.opened {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes openingSlideBackgroundAnimation {
+    from {
+        width: 130%;
+        height: 130%;
+        opacity: 0;
+    }
+
+    to {
+        width: 100%;
+        height: 100%;
+        opacity: 6;
+    }
+}
+
+
+.openingSlide .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(45%);
+    animation-name: openingSlideBackgroundAnimation;
+    animation-duration: 3s;
+    transition: ease-in;
+    /* opacity: 0; */
+}
+
+.openingSlide .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 8% 0;
+}
+
+@keyframes ornamentAndCoupleNameAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 7;
+    }
+}
+
+.openingSlide .container #coupleName {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 6.5vh;
+    color: white;
+    animation-name: ornamentAndCoupleNameAnimation;
+    animation-duration: 2s;
+    transition: ease-in;
+}
+
+#openingSlideOrnament {
+
+    animation-name: ornamentAndCoupleNameAnimation;
+    animation-duration: 2s;
+    transition: ease-in;
+}
+
+@keyframes openInviteButtonAnimation {
+    from {
+        transform: translate(0, 200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0);
+        opacity: 6;
+    }
+}
+
+.openingSlide .container #openInviteButton {
+    background-color: whitesmoke;
+    padding: .5% 2.5%;
+    font-family: 'Playfair', serif;
+    animation-name: openInviteButtonAnimation;
+    animation-duration: 3s;
+    transition: ease-in;
+}
+
+@keyframes weddingDateOpeningSlide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 6;
+    }
+}
+
+#weddingDateOpeningSlide {
+    font-family: 'Playfair', serif;
+    font-size: 3vh;
+    color: white;
+    animation-name: weddingDateOpeningSlide;
+    animation-duration: 3s;
+    transition: ease-in;
+}
+
+@keyframes toWhoOpeningSlideAnimation {
+    from {
+        opacity: 0;
+        transform: translate(0, 200px);
+    }
+    to {
+        opacity: 6;
+        transform: translate(0);
+    }
+}
+
+#toWhoOpeningSlide {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3vh;
+    color: white;
+    animation-name: toWhoOpeningSlideAnimation;
+    animation-duration: 3s;
+    transition: ease-in-out;
+}
+
+.webContent {
+    position: relative;
+}
+
+/* Section 1 */
+@keyframes sectionOneMainImageAnimation {
+    from {
+        width: 115vh;
+        height: 75vh;
+        opacity: 0;
+    }
+
+    to {
+        width: 130vh;
+        height: 90vh;
+        opacity: 7;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sectionOneMainImage {
+        width: 90% !important;
+        height: 50vh !important;
+        animation-name: sectionOneMainImageAnimation;
+        animation-duration: 0.5s;
+        transition: 0.5s ease-in;
+        object-fit: cover;
+    }
+
+    .sectionOneHeaderOrnament {
+        width: 35vh !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .sectionOneMainImage {
+        width: 90% !important;
+        height: 30vh !important;
+        animation-name: sectionOneMainImageAnimation;
+        animation-duration: 0.5s;
+        transition: 0.5s ease-in;
+        object-fit: cover;
+    }
+}
+
+.sectionOneMainImage {
+    width: 130vh;
+    height: 90vh;
+    animation-name: sectionOneMainImageAnimation;
+    animation-duration: 0.5s;
+    transition: 0.5s ease-in;
+}
+
+.startAnimationMainAnimationSectionOne {
+    animation: sectionOneMainImageAnimation 0.5s ease-in;
+}
+
+@keyframes sectionOneHeaderOrnament {
+    from {
+        transform: translate(0, -27%);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+.sectionOneHeaderOrnament {
+    animation-name: sectionOneHeaderOrnament;
+    transition-duration: 1.5s;
+    transition: ease-in;
+}
+
+.startAnimationSectionOneHeaderOrnament {
+    animation: sectionOneHeaderOrnament 1.5s ease-in;
+}
+
+.weddingInformation {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+    position: relative;
+    z-index: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#secOneText {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+@keyframes coupleNameAnimationSectionOne {
+    from {
+        font-size: 4.5;
+        transform: translateY(200px);
+        opacity: 0;
+    }
+
+    to {
+        font-size: 8.5vh;
+        transform: translateY(0);
+        opacity: 7;
+    }
+}
+
+#coupleNameSecOne {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 8.5vh;
+    animation-name: sectionOneHeaderOrnament;
+    transition-duration: 2.5s;
+    transition: ease-in;
+}
+
+.startAnimationCoupleNameSecOne {
+    animation: coupleNameAnimationSectionOne 2.5s ease-in;
+}
+
+#weddingDateSecOne {
+    font-family: 'Playfair', serif;
+    font-size: 3vh;
+    font-weight: 100;
+    padding-bottom: 0.5%;
+}
+
+@media only screen and (max-width: 450px) {
+    #coupleNameSecOne {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 500;
+        font-size: 7vh;
+        animation-name: sectionOneHeaderOrnament;
+        transition-duration: 2.5s;
+        transition: ease-in;
+    }
+
+    #weddingDateSecOne {
+        font-family: 'Playfair', serif;
+        font-size: 2.2vh;
+        font-weight: 100;
+        padding-bottom: 0.5%;
+    }
+}
+
+/* Divider between section 1 & 2 */
+@keyframes dividerSectionAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 5;
+    }
+}
+
+.dividers img {
+    animation-name: dividerSectionAnimation;
+    transition-duration: 1.5s;
+    transition: ease-in;
+}
+
+.startDividerAnimation {
+    animation: dividerSectionAnimation 1.5s ease-in;
+}
+
+@media only screen and (max-width: 390px) {
+    .dividers .sectionOneAndTwoDivider {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .dividers .sectionOneAndTwoDivider {
+        width: 50% !important;
+    }
+}
+
+/* Section 2 - Couple Profile */
+
+@media (max-width: 768px) {
+    .coupleProfile #greetingText {
+        font-size: 6.5vh;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .coupleProfile #greetingText {
+        font-size: 6vh;
+    }
+
+    .coupleProfile #couplePictureSectionTwo {
+        width: 30vh !important;
+        height: 30vh !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .coupleProfile #greetingText {
+        font-size: 6vh;
+    }
+
+    .coupleProfile #couplePictureSectionTwo {
+        width: 30vh !important;
+        height: 30vh !important;
+    }
+}
+
+.coupleProfile {
+    position: relative;
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+    transform: none;
+    opacity: 1;
+    transform-style: preserve-3d;
+}
+
+@keyframes greetingTextSectionTwoAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 5;
+    }
+}
+
+#greetingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 8vh;
+    animation-name: greetingTextSectionTwoAnimation;
+    transition-duration: 1.2s;
+    transition: ease-in;
+}
+
+.startGreetingTextSectionTwoAnimation {
+    animation: greetingTextSectionTwoAnimation 1.2s ease-in;
+}
+
+#subGreetingText {
+    font-family: 'Playfair', serif;
+    margin-bottom: 3%;
+    opacity: 0;
+}
+
+#greetingTextTwo {
+    font-family: 'Playfair', serif;
+    font-weight: 100;
+    font-size: 3vh;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+#dividerTextSecTwo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-size: 10vh;
+
+}
+
+#coupleNameSec2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 8vh;
+}
+
+#coupleParentSec2 {
+    font-family: 'Playfair', serif;
+}
+
+
+/* Section 3 - Prewedding Information */
+@media (max-width: 768px) {
+    .preweddingInformation #headingTextPreweddingInformation {
+        font-size: 5vh;
+    }
+
+    .liveStreamingVid {
+        width: 100%;
+    }
+
+    .preweddingInformation #dDayInformationSec4 {
+        font-size: 5vh;
+    }
+
+    .countdown #daysSubText,
+    #hoursSubText,
+    #minutesSubText,
+    #secondsSubText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2vh !important;
+        font-weight: 600;
+    }
+
+    .countdown #days,
+    #hours,
+    #minutes,
+    #seconds {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
+        font-size: 4.5vh !important;
+    }
+
+    #addToCalendarButtonSec4 {
+        width: fit-content !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    #dividerOrnamentSectionThreeForCountdown {
+        width: 40% !important;
+        top: 87% !important;
+        bottom: 99% !important;
+        transform: translate(-50%, -7%) !important;
+    }
+
+    .countdown #days,
+    #hours,
+    #minutes,
+    #seconds {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
+        font-size: 3.5vh !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #dividerOrnamentSectionThreeForCountdown {
+        width: 40% !important;
+        top: 87% !important;
+        bottom: 99% !important;
+        transform: translate(-50%, -7%) !important;
+    }
+
+    .countdown #days,
+    #hours,
+    #minutes,
+    #seconds {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
+        font-size: 3.5vh !important;
+    }
+}
+
+.preweddingInformation {
+    position: relative;
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+}
+
+#headingTextPreweddingInformation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8vh;
+}
+
+#coupleNameSec4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    padding: 1vh 0;
+    margin-bottom: 12%;
+}
+
+#dDayInformationSec4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7vh;
+}
+
+#preweddingDateSec4 {
+    font-family: 'Playfair', serif;
+    font-size: 3vh;
+    margin-bottom: 3%;
+}
+
+.countdown-box {
+    border: 2px solid black;
+    width: fit-content;
+    padding: 0.5% 7%;
+    padding-bottom: 1%;
+    margin: 0 auto;
+    display: block;
+
+}
+
+.countdown #daysSubText,
+#hoursSubText,
+#minutesSubText,
+#secondsSubText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3vh;
+    font-weight: 600;
+}
+
+.countdown #days,
+#hours,
+#minutes,
+#seconds {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 6.5vh;
+}
+
+#addToCalendarButtonSec4 {
+    width: 15%;
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+/* Section 4 - Love Story */
+
+@media (max-width: 768px) {
+    .loveStory .coupleStoryContainer {
+        flex-direction: column-reverse;
+    }
+
+    .loveStory img {
+        display: block;
+        margin: 0 auto;
+        width: 60vh !important;
+        height: 40vh !important;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .loveStory .coupleStoryContainer {
+        flex-direction: column-reverse;
+    }
+
+    .loveStory img {
+        display: block;
+        margin: 0 auto;
+        width: 35vh !important;
+        height: 20vh !important;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .loveStory .coupleStoryContainer {
+        flex-direction: column-reverse;
+    }
+
+    .loveStory img {
+        display: block;
+        margin: 0 auto;
+        width: 35vh !important;
+        height: 20vh !important;
+        object-fit: cover;
+    }
+}
+
+.loveStoryHeading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6vh;
+    font-weight: 500;
+}
+
+.loveStoryHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7.5vh;
+    padding: 3% 0;
+}
+
+.loveStorySubText {
+    font-family: 'Playfair', serif;
+    font-weight: lighter;
+}
+
+.dividerLoveStory {
+    background-color: rgb(43, 43, 43);
+    padding: 0.25% 0;
+    margin: 5.5% 0;
+    width: 100%;
+}
+
+/* Section 5 - Photo Gallery */
+#headingTextPhotoGallery {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 7.5vh;
+    margin-top: 2%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin: 0 -4px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+    margin-bottom: 5%;
+}
+
+.column img {
+    margin-top: 8px;
+    margin-bottom: 5%;
+    width: 95%;
+    height: 25%;
+    border-radius: 5px;
+    transition: 0.3s linear;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        margin-bottom: auto !important;
+    }
+
+    .column img {
+        filter: grayscale(0) brightness(1);
+        display: block;
+        margin: 5.5% auto;
+        margin-top: 2.5% !important;
+        height: auto;
+    }
+}
+
+
+
+
+/* Section 6 - Series Of Event */
+@media (max-width: 768px) {
+    .seriesOfEventHeading {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 7vh;
+        text-transform: uppercase;
+        font-weight: lighter;
+        margin-top: 0% !important;
+        margin-bottom: 15%;
+    }
+
+    #seriesOfEventOrnamentImage {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    #seriesOfEventOrnamentImage {
+        position: absolute;
+        top: -5% !important;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #seriesOfEventOrnamentImage {
+        position: absolute;
+        top: -5% !important;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 70% !important;
+    }
+}
+
+.seriesOfEvent {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+    position: relative;
+}
+
+.seriesOfEventHeading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7vh;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-top: 8%;
+}
+
+.seriesOfEventOrnamentWrapper {
+    position: relative;
+}
+
+.seriesOfEventBodyText {
+    font-family: 'Playfair', serif;
+}
+
+/* Section 14 - Map Detail */
+.eventMap {
+    position: relative;
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+}
+
+@media only screen and (max-width: 390px) {
+    .viewMapButton {
+        width: 50% !important;
+    }
+
+    #weddingDayTextSec4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: 7.5vh !important;
+    }
+
+    #akad-nikah-event-text, #resepsi-event-text  {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 7.5vh !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .viewMapButton {
+        width: 50% !important;
+    }
+
+    #weddingDayTextSec4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: 7.5vh !important;
+    }
+
+    #akad-nikah-event-text, #resepsi-event-text  {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 7.5vh !important;
+    }
+
+    .eventLocationText {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 3vh !important;
+        width: 95% !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #weddingDateTextSec4 {
+        font-family: 'Playfair', serif;
+        font-size: 3.5vh !important;
+    }
+}
+
+#weddingDayTextSec4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 8.5vh;
+}
+
+#weddingDaysTextSec4 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+#weddingDateTextSec4 {
+    font-family: 'Playfair', serif;
+}
+
+#akad-nikah-event-text, #resepsi-event-text  {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8.5vh;
+}
+
+.eventTimeText {
+    font-family: 'Playfair', serif;
+}
+
+.eventLocationText {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 3.5vh;
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Section 7 - Health Protocol */
+.healthProtocolHeading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8vh;
+}
+
+#protocol-card-text {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Section 8 - Live Streaming */
+.liveStreamingHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 7.5vh;
+    margin-top: 6%;
+}
+
+.liveStreamingSubText {
+    font-family: 'Playfair', serif;
+    font-size: 2.5vh;
+    margin-bottom: 4%;
+}
+
+/* Section 9 - Instagram Wedding Filter */
+@media (max-width: 768px) {
+    .instagramWeddingFilterWrapper {
+        width: 75% !important;
+    }
+
+    .instagramWeddingFilterHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 5vh !important;
+        font-weight: 400;
+    }
+
+    .instagramWeddingFilterHeading {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.5vh !important;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .liveStreamingHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: 6vh !important;
+        margin-bottom: 3.5% !important;
+        margin-top: 6%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .liveStreamingHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: 6vh !important;
+        margin-bottom: 3.5% !important;
+        margin-top: 6%;
+    }
+}
+
+.instagramWeddingFilterWrapper {
+    width: 50%;
+}
+.instagramWeddingFilter {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+}
+
+.instagramWeddingFilterHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7.5vh;
+    font-weight: 400;
+}
+
+.instagramWeddingFilterHeading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5vh;
+    font-weight: 500;
+}
+
+/* Section 10 - Digital Envelope */
+@media (max-width: 768px) {
+    .digiEnveWrapper {
+        width: 75% !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .digiEnveHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 5.5vh !important;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .digiEnveHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 5.5vh !important;
+        font-weight: 400;
+    }
+}
+
+.digiEnveWrapper {
+    width: 50%;
+}
+
+.digiEnve {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+}
+
+.digiEnveHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7vh;
+    font-weight: 400;
+}
+
+#digiEnveSubHeadingText {
+    font-family: 'Playfair', serif;
+    font-size: 2.5vh;
+}
+
+#digiEnveFormHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5vh;
+    font-weight: 500;
+}
+
+/*Section 11 - Wedding Wish*/
+@media (max-width: 768px) {
+    .weddingWishWrapper {
+        width: 75% !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .weddingWishHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.9vh !important;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .weddingWishHeadingText {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.9vh !important;
+        font-weight: 400;
+    }
+}
+
+.weddingWishWrapper {
+    width: 50%;
+}
+
+.weddingWish {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+}
+
+.weddingWishHeadingText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7vh;
+    font-weight: 400;
+}
+
+#senderNameInput,
+#weddingWishMessageInput {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5vh;
+    color: grey;
+}
+
+/* Section 12 - Wedding Wish Log */
+@media (max-width: 768px) {
+    .weddingWishMessageBox {
+        width: 75% !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .senderName {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3vh !important;
+        font-weight: bold;
+    }
+    
+    .weddingWishMessage {
+        font-family: 'Playfair', serif;
+        font-size: 1.5vh !important;
+        font-weight: 500;
+        margin-bottom: 1.2% !important;
+    }
+    
+    .weddingWishTimeStamp {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2vh !important;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .senderName {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3vh !important;
+        font-weight: bold;
+    }
+    
+    .weddingWishMessage {
+        font-family: 'Playfair', serif;
+        font-size: 1.5vh !important;
+        font-weight: 500;
+        margin-bottom: 1.2% !important;
+    }
+    
+    .weddingWishTimeStamp {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2vh !important;
+        font-weight: bold;
+    }
+}
+
+.weddingWishMessageBox {
+    width: 50%;
+}
+
+.weddingWishLog {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+/* Mengatur scrollbar agar transparan */
+.weddingWishLog::-webkit-scrollbar {
+    width: 12px;
+}
+
+.weddingWishLog::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.weddingWishLog::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+.senderName {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5vh;
+    font-weight: bold;
+}
+
+.weddingWishMessage {
+    font-family: 'Playfair', serif;
+    font-size: 2.3vh;
+    font-weight: 500;
+    margin-bottom: 2.5%;
+}
+
+.weddingWishTimeStamp {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8vh;
+    font-weight: bold;
+}
+
+/* Section 13 - Footnote */
+@media (max-width: 768px) {
+    .footNoteOrnament {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .footNoteCoupleName {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: bold;
+        font-size: 5.5vh !important;
+        color: rgb(43, 43, 43);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .footNoteCoupleName {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: bold;
+        font-size: 5.5vh !important;
+        color: rgb(43, 43, 43);
+    }
+}
+
+.footNoteOrnament {
+    width: 25%;
+}
+
+.footNote {
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+    padding-top: 6.5%;
+}
+
+.footNoteCoupleName {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-size: 8.5vh;
+    color: rgb(43, 43, 43);
+}
+
+.footNoteCoupleDate {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    color: rgb(43, 43, 43);
+}
+
+
+.music-box {
+    width: 20%;
+    margin: 7%;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.music-box-rotating {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* RSVP */
+.rsvp {
+    display: block;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4=');
+}
+
+.rsvpWrapper {
+    padding: 2.5%;
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+}
+
+.rsvpHeadingText {
+    font-family: 'Anglecia';
+    font-size: 5.5vh;
+    text-align: center;
+    color: #794b28;
+}
+
+.rsvpSubHeadingText {
+    font-family: 'Anglecia';
+    font-size: 3vh;
+    text-align: center;
+    color: #794b28;
+    margin-bottom: 7vh;
+}
+
+.rsvpButton {
+    padding: 50%;
+    cursor: pointer;
+    background: #212529;
+    color: white;
+    width: 25px;
+    height: 15px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rsvpButton:hover {
+    background: rgb(39, 39, 39);
+}
+
+.peopleYouBringInput {
+    text-align: center;
+}
+
+.rsvpConfirmButton {
+    background-color: #212529;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding: 1% 4%;
+    transition: .2s ease-in-out;
+}
+
+.rsvpConfirmButton:hover {
+    background-color: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.5vh;
+}
+
+/* Responsive Setup */
+@media only screen and (max-width: 390px) {
+    .rsvp {
+        display: block;
+        margin: 15% auto;
+    }
+
+    .rsvpHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-align: center;
+        color: #794b28;
+        margin-bottom: 4.5vh;
+    }
+
+    .rsvpButton {
+        padding: 70% !important;
+        margin: auto;
+        cursor: pointer;
+        background: #ce834a;
+        color: white;
+        width: 25px;
+        height: auto !important;
+        text-align: center;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .rsvp {
+        display: block;
+        margin: 15% auto;
+    }
+
+    .rsvpHeadingText {
+        font-family: 'Anglecia';
+        font-size: 5.5vh;
+        text-align: center;
+        color: #794b28;
+        margin-bottom: 2.5vh;
+    }
+
+    .rsvpButton {
+        padding: 70% !important;
+        margin: auto;
+        cursor: pointer;
+        background: #ce834a;
+        color: white;
+        width: 25px;
+        height: auto !important;
+        text-align: center;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.15rem;
+    color: #000;
+    z-index: 9999 !important;
+}
+
+.select-button {
+    width: 100%;
+    font-size: 1.15rem;
+    background-color: #fff;
+    padding: 0.675em 1em;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-value {
+    text-align: left;
+}
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: transform ease-in-out 0.3s;
+}
+
+.select-dropdown {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: 0.5s ease;
+
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.select-dropdown:focus-within {
+    box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+}
+
+.select-dropdown li {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown li label {
+    width: 100%;
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown::-webkit-scrollbar {
+    width: 7px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.select-dropdown li:hover,
+.select-dropdown input:checked~label {
+    background-color: #f2f2f2;
+}
+
+.select-dropdown input:focus~label {
+    background-color: #dfdfdf;
+}
+
+.select-dropdown input[type="radio"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.custom-select.active .arrow {
+    transform: rotate(180deg);
+}
+
+.custom-select.active .select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.prewed-vid {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    width: 70%;
+}
+
+@media only screen and (max-width: 390px) {
+    .prewed-vid {
+        margin-bottom: 4% !important;
+        margin-top: 0 !important;
+        padding-bottom: 0 !important;
+        width: max-content;
+    }
+
+    .liveStreamingVid {
+        width: -webkit-fill-available;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .prewed-vid {
+        margin-bottom: 4% !important;
+        margin-top: 0 !important;
+        padding-bottom: 0 !important;
+        width: -webkit-fill-available;
+    }
+
+    .liveStreamingVid {
+        width: -webkit-fill-available;
+    }
+}

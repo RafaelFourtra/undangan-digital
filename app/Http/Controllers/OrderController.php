@@ -57,7 +57,7 @@ class OrderController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user->assignRole($request->roles);
+        $user->assignRole('Customer');
         event(new Registered($user));
 
         $newUserId = $user->id;
@@ -75,17 +75,18 @@ class OrderController extends Controller
             'domain' => $request->domain,
             'tanggal_order' => Carbon::now(),
             'expired' => $request->expired,
-            'status' => 1,
+            'status' => '1',
         ]);
 
         $template = TemplatePesanModel::create([
             'user_id' => $newUserId,
             'title' => 'Undangan Pernikahan',
-            'templatepesan' => "Kepada Yth
+            'templatepesan' => 
+            "Kepada Yth,
             {nama_tamu} 
-            
+                        
             Tanpa Mengurangi Rasa Hormat. Kami Bermaksud Mengundang Bapak/Ibu/Saudara/i, Pada Acara Pernikahan Kami. 
-            
+                        
             Info lebih lengkap klik link dibawah ini {link_undangan} Atas Kehadiran dan Do'a Restunya Kami Ucapkan Terimakasih."
         ]);
        

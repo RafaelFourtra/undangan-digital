@@ -270,7 +270,7 @@
                                 Swal.fire({
                                     title: 'Berhasil!',
                                     icon: 'success',
-                                    text: 'Musik berhasil as.',
+                                    text: 'Musik berhasil ditambahkan.',
                                     didClose: () => {
 
                                     }

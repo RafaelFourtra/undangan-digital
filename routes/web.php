@@ -34,16 +34,14 @@ Route::get('/', function () {
     return redirect()->to('dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified']);
-
-Route::get('/test', function () {
-    return view('tema-undangan.tema1');
+Route::get('/', function () {
+    return redirect()->to('login');
 });
 Route::get('/wedding/{domain}/', [UndanganController::class, 'undanganShow'])->name('undangan.show');
 Route::get('ucapan/{id}/', [UndanganController::class, 'ucapanShow'])->name('ucapan.show');
 Route::post('ucapan/store/{id}/', [UndanganController::class, 'ucapanStore'])->name('ucapan.store');
+Route::post('rsvp/store/{id}/', [UndanganController::class, 'rsvpStore'])->name('rsvp.store');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -67,7 +65,8 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('dashboard')->group(function () {
-        Route::get('/',[ DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('ucapan', [DashboardController::class, 'listUcapan'])->name('list.ucapan'); 
     });
 
     Route::prefix('undangan')->group(function () {

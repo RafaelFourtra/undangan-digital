@@ -39,6 +39,7 @@ class BukuTamuController extends Controller
                 'kode_tamu' => $kode_tamu,
                 'whatsapp' => $request->whatsapp,
                 'jumlah' => $request->jumlah,
+                'jumlahkehadiran' => null
             ]);
         } else {
             

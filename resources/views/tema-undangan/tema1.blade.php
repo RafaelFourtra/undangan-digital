@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/tema1/css/main.css">
     <title>Online Invitation</title>
+    <link rel="stylesheet" href="/assets/vendors/jquery-toast-plugin-master/src/jquery.toast.css">
+
 </head>
 
 <body>
     <div style="overflow-x: hidden !important;" class="section-one">
-        <div style="overflow-x: hidden !important;" class="background"></div>
+        <div style="overflow-x: hidden !important; background-image: url('{{ asset('images/sampul/' . $informasiacara->sampul) }}');"
+            class="background"></div>
         <div style="overflow-x: hidden !important;" class="container my-2">
             <!-- Section 1 -> Welcoming Section -->
             <div style="overflow-x: hidden !important;" class="center-content">
@@ -22,24 +25,24 @@
                         <div class="row">
                             <input type="hidden" name="user_id" id="user_id" value="{{ $getUser->user_id }}">
                             <h1 id="welcoming-sentences-sec1" class="text-light">The Wedding Of</h1>
-                            <h1 id="user-name" class="mb-0 pb-0">{{ $mempelai ? $mempelai->namalaki : 'Adi' }} &
-                                {{ $mempelai ? $mempelai->namaperempuan : 'Aci' }}</h1>
+                            <h1 id="user-name" class="mb-0 pb-0">{{ $mempelai ? $mempelai->namalaki : '' }} &
+                                {{ $mempelai ? $mempelai->namaperempuan : '' }}</h1>
                             <!-- <h1 id="user-name" class="mt-0 pt-0">Rahmat</h1> -->
                             <h3 id="wedding-date-sec1" class="text-light" style="z-index: 9999;">
-                                {{ $afterConvertDay ? $afterConvertDay : 'Minggu' }},
-                                {{ $tanggalAcara ? $tanggalAcara : '22 Juli 2014' }}</h3>
+                                {{ $afterConvertDay ? $afterConvertDay : '' }},
+                                {{ $tanggalAcara ? $tanggalAcara : '' }}</h3>
                             <h5 style="z-index: 9999; font-family: 'PlayBall', serif; opacity: 0;"
-                                class="text-center text-light" id="coupleWeddingSubtext">To: <br>
-                                {{ $namaTamu ? $namaTamu : 'Tamu Undangan' }}</h5>
+                                class="text-center text-light" id="coupleWeddingSubtext">To: <br> {{ $namaTamu }}
+                            </h5>
                         </div>
                         <div style="padding: 10% 0;" class="row">
-                            <!-- <img style="filter: brightness(99999%); width: 35%;" class="d-block mx-auto p-0 m-0" src="/tema1/ornament/ornament-2.png" alt=""> -->
+                            <!-- <img style="filter: brightness(99999%); width: 35%;" class="d-block mx-auto p-0 m-0" src="/asset/ornament/ornament-2.png" alt=""> -->
                         </div>
                         <div class="row">
                             <div class="d-flex align-items-center justify-content-center mt-3">
-                                <button type="button" id="save-date-button"
+                                <a href="#" id="save-date-button"
                                     class="text-center text-light p-2 px-4 btn border border-2 rounded-5 fw-semibold">Open
-                                    Invitation</button>
+                                    Invitation</a>
                             </div>
                         </div>
                     </div>
@@ -56,12 +59,8 @@
             <!-- Bible Verse -->
             <div class="bible-verse py-4">
                 <h4 id="bible-verses-sec2" class="text-center w-75 d-block mx-auto">
-                    {{ $quotes
-                        ? $quotes->quotes
-                        : '"Demikianlah mereka bukan
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        lagi
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        dua, melainkan satu. Karena itu, apa yang telah
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        dipersatukan Allah, tidak boleh diceraikan manusia."' }}
+                    {{ $quotes ? $quotes->quotes : '' }}
+
                 </h4>
                 <h2 id="bible-verse-sec2" class="text-light text-center mb-3"></h2>
             </div>
@@ -71,13 +70,14 @@
                 <div class="row">
                     <div class="col-md mb-5">
                         <div style="position: relative;" class="groom-wrapper">
-                            <div style="position: relative;" class="image-container">
-                                <img id="groomProfileImage" class="d-block mx-auto rounded"
-                                    style="width: 0%; opacity: 0;"
-                                    src="{{ $mempelai ? asset('images/mempelai/laki/' . $mempelai->fotolaki) : 'https://i.pinimg.com/736x/9d/79/b2/9d79b2233afeb7a8ae038f202dc1abb9.jpg' }}"
+                            <div style="position: relative;" class="image-container overlay-container mb-3">
+                                <img id="groomProfileImage" class="d-block mx-auto rounded img-fluid"
+                                    style="opacity: 0;"
+                                    src="{{ $mempelai ? asset('images/mempelai/laki/' . $mempelai->fotolaki) : '' }}"
                                     alt="">
-                                <img style="position: absolute; top: -4%; left: 2%; max-width: 100%; height: 100%; opacity: 0; z-index: 1;"
-                                    src="/tema1/ornament/Group 1.svg" alt="" class="overlayImage">
+                                <div class="overlayImage">
+                                    <img src="/tema1/ornament/Group 1.svg" alt="" class="ornament">
+                                </div>
                             </div>
                             <div class="groom-information p-3 px-5">
                                 <h3 id="groom" class="text-light">The Groom</h3>
@@ -85,24 +85,24 @@
                                     style="background-color: #EBB760; border: 1.5% solid #EBB760; color: #EBB760; width: 0%;">
                                 <br>
                                 <h1 id="groom-name" class="mb-2">
-                                    {{ $mempelai ? $mempelai->namalengkaplaki : 'Aduy Nababan' }}
+                                    {{ $mempelai ? $mempelai->namalengkaplaki : '' }}
                                 </h1>
                                 <h4 id="groom-parent-name">
-                                    Son of Mr. {{ $mempelai ? $mempelai->namabapaklaki : 'Jono Marsinto' }} & Mrs.
-                                    {{ $mempelai ? $mempelai->namaibulaki : 'Kina Birmanti' }}
-                                </h4>
+                                    Son of Mr. {{ $mempelai ? $mempelai->namabapaklaki : '' }} & Mrs.
+                                    {{ $mempelai ? $mempelai->namaibulaki : '' }} </h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-md">
                         <div style="position: relative;" class="bride-wrapper">
-                            <div style="position: relative;" class="image-container">
-                                <img id="brideProfileImage" class="d-block mx-auto rounded"
-                                    style="width: 0%; opacity: 0;"
-                                    src="{{ $mempelai ? asset('images/mempelai/perempuan/' . $mempelai->fotoperempuan) : 'https://i.pinimg.com/736x/9d/79/b2/9d79b2233afeb7a8ae038f202dc1abb9.jpg' }}"
+                            <div style="position: relative;" class="image-container overlay-container mb-3">
+                                <img id="brideProfileImage" class="d-block mx-auto rounded img-fluid"
+                                    style="opacity: 0;"
+                                    src="{{ $mempelai ? asset('images/mempelai/perempuan/' . $mempelai->fotoperempuan) : '' }}"
                                     alt="">
-                                <img style="position: absolute; top: -4%; left: 10.5%; max-width: 100%; height: 100%; opacity: 0; z-index: 1; transform: rotateY(180deg);"
-                                    src="/tema1/ornament/Group 1.svg" alt="" class="overlayImage">
+                                <div class="overlayImage">
+                                    <img src="/tema1/ornament/Group 1.svg" alt="" class="ornament">
+                                </div>
                             </div>
                             <div class="bride-information p-3 px-5">
                                 <h3 id="bride" class="text-light text-end">The Bride</h3>
@@ -110,11 +110,11 @@
                                     style="background-color: #EBB760; border: 1.5% solid #EBB760; color: #EBB760; width: 0%;">
                                 <br>
                                 <h1 id="bride-name" class="text-end mb-2">
-                                    {{ $mempelai ? $mempelai->namalengkapperempuan : 'Gina Nababan' }}
+                                    {{ $mempelai ? $mempelai->namalengkapperempuan : '' }}
                                 </h1>
                                 <h4 id="bride-parent-name" class="text-end">
-                                    Daughter of Mr. {{ $mempelai ? $mempelai->namabapakperempuan : 'Jono Marsinto' }} &
-                                    Mrs. {{ $mempelai ? $mempelai->namaibuperempuan : 'Kina Birmanti' }}
+                                    Daughter of Mr. {{ $mempelai ? $mempelai->namabapakperempuan : '' }} & Mrs.
+                                    {{ $mempelai ? $mempelai->namaibuperempuan : '' }}
                                 </h4>
                             </div>
                         </div>
@@ -127,11 +127,11 @@
         <div class="event-detail">
             <!-- Countdown -->
             <h2 id="save-date-text" class="text-light text-center">Save The Date</h2>
-            <h2 id="event-date" class="text-center mb-5">{{ $afterConvertDay ? $afterConvertDay : 'Minggu' }},
-                {{ $tanggalAcara ? $tanggalAcara : '22 Juli 2014' }}</h2>
+            <h2 id="event-date" class="text-center mb-5">{{ $afterConvertDay ? $afterConvertDay : '' }},
+                {{ $tanggalAcara ? $tanggalAcara : '' }}</h2>
             <div class="countdown-box mb-5">
                 <div class="d-flex align-items-center justify-content-center">
-                    <div id="countdown" class="countdown text-light row px-5">
+                    <div id="countdown" class="countdown text-light row px-1">
                         <div class="countdown-item col days">
                             <input type="hidden" name="tglacara" id="tglacara" value="{{ $oriTanggalAcara }}">
                             <span>
@@ -161,63 +161,76 @@
                 </div>
             </div>
 
-            <!-- Live Streaming -->
-            <h2 id="liveStreamingText" class="text-center">Live Streaming</h2>
-            <h4 id="liveStreamingSubText" class="text-center">Tak semua bisa hadir secara fisik di hari
-                pernikahan kami, tapi Anda masih bisa ikut merayakan lewat livestreaming. Klik tautan di bawah ini dan
-                saksikan momen spesial kami dari jauh. Terima kasih atas dukungan dan cinta Anda.</h4>
-            <iframe style="opacity: 0;" class="d-block mx-auto mb-5 liveStreamingVid" width="560" height="315"
-                src="{{ $informasiacara ? $informasiacara->livestream : 'https://www.youtube.com/embed/jfKfPfyJRdk?si=EbCkkUA-HuNzEAUs' }}"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            @if ($informasiacara)
+                @if ($informasiacara->livestream)
+                    <!-- Live Streaming -->
+                    <h2 id="liveStreamingText" class="text-center">Live Streaming</h2>
+                    <h4 id="liveStreamingSubText" class="text-center">Tak semua bisa hadir secara fisik di hari
+                        pernikahan kami, tapi Anda masih bisa ikut merayakan lewat livestreaming. Klik tautan di bawah
+                        ini dan
+                        saksikan momen spesial kami dari jauh. Terima kasih atas dukungan dan cinta Anda.</h4>
+                    <iframe style="opacity: 0;" class="d-block mx-auto mb-5 liveStreamingVid" width="560"
+                        height="315"
+                        src="{{ $informasiacara ? $informasiacara->livestream : 'https://www.youtube.com/embed/jfKfPfyJRdk?si=EbCkkUA-HuNzEAUs' }}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
 
-            <hr style="background-color: #EBB760 !important; border: 0.3vh solid #EBB760 !important; color: #EBB760 !important;"
-                class="rounded w-75 d-block mx-auto mb-5">
-
+                    <hr style="background-color: #EBB760 !important; border: 0.3vh solid #EBB760 !important; color: #EBB760 !important;"
+                        class="rounded w-75 d-block mx-auto mb-5">
+                @endif
+            @endif
             <!-- Event Detail -->
             <div class="event-detail-box">
                 <h1 id="wedding-day-text-sec4" class="text-center text-light">Wedding Day</h1>
                 <h1 id="wedding-days-text-sec4" class="text-center text-light">
-                    {{ $afterConvertDay ? $afterConvertDay : 'Minggu' }}</h1>
+                    {{ $afterConvertDay ? $afterConvertDay : '' }}</h1>
                 <h3 style="color: #EBB760 !important;" id="wedding-date-text-sec4" class="text-center mb-5">
-                    {{ $tanggalAcara ? $tanggalAcara : '22 Juli 2014' }}
+                    {{ $tanggalAcara ? $tanggalAcara : '' }}
                 </h3>
 
                 <div class="row my-4 mb-5">
                     <div class="col-md">
                         <h3 id="akad-nikah-event-text" class="text-center text-light">Akad Nikah</h3>
-                        <h3 style="color: #EBB760 !important;" id="event-time-text" class="text-center">
+                        <h3 style="color: #EBB760 !important;" id="event-time-text"
+                            class="text-center event-time-text">
                             {{ $informasiacara ? $informasiacara->jamakadnikah : '08.00' }} -
-                            {{ $informasiacara ? $informasiacara->jamakadnikah : '08.00' }}
+                            Selesai
                         </h3>
-                        <h2 id="event-location-text" class="text-center text-light">
-                            {{ $informasiacara ? $informasiacara->lokasiakadnikah : 'BAnjarmasin SOLo' }}</h2>
+                        {{-- <h2 id="event-location-text" class="text-center text-light fw-bold">
+                        </h2> --}}
+                        <h2 id="event-location-text" class="text-center text-light w-75 d-block mx-auto">
+                            {{ $informasiacara ? $informasiacara->lokasiakadnikah : '' }}</h2>
                         <a href="{{ $informasiacara ? $informasiacara->googlemapspernikahan : '#' }}"
                             style="font-family: 'Playball', serif; opacity: 0; font-size: 2.4vh; color: #EBB760 !important; border: 0.5vh solid #EBB760;"
-                            class="viewMapButton viewMapButtonAkadNikah btn bg-transparent mt-4 fw-semibold w-25 d-block mx-auto">View
+                            class="viewMapButton viewMapButtonAkadNikah btn bg-transparent mt-4 fw-semibold w-50 d-block mx-auto">View
                             Map</a>
                     </div>
-                    @if ($informasiacara->lokasiresepsi)
-                        <div class="col-md">
-                            <h3 id="resepsi-event-text" class="text-center text-light">Resepsi</h3>
-                            <h3 style="color: #EBB760 !important;" id="event-time-text" class="text-center">
-                                {{ $informasiacara ? $informasiacara->jamresepsi : '08.00' }} -
-                                {{ $informasiacara ? $informasiacara->jamresepsi : '08.00' }}
-                            </h3>
-                            <h2 id="event-location-text" class="text-center text-light">
-                                {{ $informasiacara ? $informasiacara->lokasiresepsi : 'BAnjarmasin SOLo' }}</h2>
 
-                            <a href="{{ $informasiacara ? $informasiacara->googlemapsresepsi : '#' }}"
-                                style="font-family: 'Playball', serif; opacity: 0; font-size: 2.4vh; color: #EBB760 !important; border: 0.5vh solid #EBB760;"
-                                class="viewMapButton btn bg-transparent mt-4 fw-semibold w-25 d-block mx-auto">View
-                                Map</a>
-                        </div>
-                    @endif
+                    <div class="col-md"
+                        @if ($informasiacara) @if ($informasiacara->lokasiresepsi)  @else style="display:none;" @endif
+                        @endif>
+                        <h3 id="resepsi-event-text" class="text-center text-light">Resepsi</h3>
+                        <h3 style="color: #EBB760 !important;" id="event-time-text"
+                            class="text-center event-time-text">
+                            {{ $informasiacara ? $informasiacara->jamresepsi : '' }} -
+                            Selesai
+                        </h3>
+                        {{-- <h2 id="event-location-text" class="text-center text-light fw-bold">JW Marriott Hotel
+                                    Medan
+                                </h2> --}}
+                        <h2 id="event-location-text" class="text-center text-light w-75 d-block mx-auto">
+                            {{ $informasiacara ? $informasiacara->lokasiresepsi : '' }}</h2>
+                        <a href="{{ $informasiacara ? $informasiacara->googlemapsresepsi : '#' }}"
+                            style="font-family: 'Playball', serif; opacity: 0; font-size: 2.4vh; color: #EBB760 !important; border: 0.5vh solid #EBB760;"
+                            class="viewMapButton btn bg-transparent mt-4 fw-semibold w-50 d-block mx-auto">View
+                            Map</a>
+                    </div>
                 </div>
 
+
                 <!-- Health Protocol -->
-                <div class="health-protocol">
+                <div class="health-protocol" @if ($protokol != null) @else style="display: none;" @endif>
                     <h1 id="health-protocol-text-sec4" class="text-center text-light mb-5">Protokol Kesehatan</h1>
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="health-protocol-inside row w-75">
@@ -267,375 +280,278 @@
             </div>
         </div>
 
+
         <!-- Couple Gallery - Section 5 -->
-        @if ($count > 0)
-            <div class="couple-gallery px-5">
-                <h1 id="coupleGalleryText" class="text-center mb-5">Our Gallery</h1>
-                <div class="row mb-4">
-                    @if ($count > 0)
-                        <div class="col-md-6 mb-3">
-                            <img style="opacity: 0;" id="coupleImage1" class="d-block mx-auto rounded"
-                                src="{{ asset('images/galeri/' . $galeri[0]->foto) }}" alt="">
-                        </div>
-                    @endif
-                    <div class="col-md-6">
-                        <div class="row">
-                            @if ($count > 1)
-                                <div class="col">
-                                    <img style="opacity: 0;" id="coupleImage2" class="d-block mx-auto rounded"
-                                        src="{{ asset('images/galeri/' . $galeri[1]->foto) }}" alt="">
-                                </div>
-                            @endif
-                            @if ($count > 2)
-                                <div class="col">
-                                    <img style="opacity: 0;" id="coupleImage3" class="d-block mx-auto rounded"
-                                        src="{{ asset('images/galeri/' . $galeri[2]->foto) }}" alt="">
-                                </div>
-                            @endif
-                        </div>
-                        <div class="row" style="padding-top: 4%;">
-                            @if ($count > 3)
-                                <div class="col">
-                                    <img style="opacity: 0;" id="coupleImage4" class="d-block mx-auto rounded"
-                                        src="{{ asset('images/galeri/' . $galeri[3]->foto) }}" alt="">
-                                </div>
-                            @endif
-                            @if ($count > 4)
-                                <div class="col">
-                                    <img style="opacity: 0;" id="coupleImage5" class="d-block mx-auto rounded"
-                                        src="{{ asset('images/galeri/' . $galeri[4]->foto) }}" alt="">
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+        <div class="couple-gallery px-5" @if ($count > 0) @else  style="display:none;" @endif>
+            <h1 id="coupleGalleryText" class="text-center mb-5">Our Gallery</h1>
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            @if ($count > 5)
-                                <div class="col">
-                                    <img style="opacity: 0;" id="coupleImage6" class="d-block mx-auto rounded"
-                                        src="{{ asset('images/galeri/' . $galeri[5]->foto) }}" alt="">
-                                </div>
-                            @endif
-                            @if ($count > 6)
-                                <div class="col">
-                                    <img style="opacity: 0;" id="coupleImage7" class="d-block mx-auto rounded"
-                                        src="{{ asset('images/galeri/' . $galeri[6]->foto) }}" alt="">
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    @if ($count > 7)
-                        <div class="col-md-6">
-                            <img style="opacity: 0;" id="coupleImage8" class="d-block mx-auto rounded"
-                                src="{{ asset('images/galeri/' . $galeri[7]->foto) }}" alt="">
-                        </div>
-                    @endif
-                </div>
-            </div>
-        @else
-            <div class="couple-gallery px-5">
-                <h1 id="coupleGalleryText" class="text-center mb-5">Our Gallery</h1>
-                <div class="row mb-4">
-                    <div class="col-md-6 mb-3">
-                        <img style="opacity: 0;" id="coupleImage1" class="d-block mx-auto rounded"
-                            src="https://w.forfun.com/fetch/8d/8d209d2587ce83b38fd82f77a6d6c1a6.jpeg" alt="">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col">
-                                <img style="opacity: 0;" id="coupleImage2" class="d-block mx-auto rounded"
-                                    src="https://w.forfun.com/fetch/8d/8d209d2587ce83b38fd82f77a6d6c1a6.jpeg"
-                                    alt="">
-                            </div>
-                            <div class="col">
-                                <img style="opacity: 0;" id="coupleImage3" class="d-block mx-auto rounded"
-                                    src="https://w.forfun.com/fetch/8d/8d209d2587ce83b38fd82f77a6d6c1a6.jpeg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="row" style="padding-top: 4%;">
-                            <div class="col">
-                                <img style="opacity: 0;" id="coupleImage4" class="d-block mx-auto rounded"
-                                    src="https://w.forfun.com/fetch/8d/8d209d2587ce83b38fd82f77a6d6c1a6.jpeg"
-                                    alt="">
-                            </div>
-                            <div class="col">
-                                <img style="opacity: 0;" id="coupleImage5" class="d-block mx-auto rounded"
-                                    src="https://w.forfun.com/fetch/8d/8d209d2587ce83b38fd82f77a6d6c1a6.jpeg"
-                                    alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col">
-                                <img style="opacity: 0;" id="coupleImage6" class="d-block mx-auto rounded"
-                                    src="https://www.mordeo.org/files/uploads/2020/01/Couple-Romantic-Sunset-Silhouette-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-                                    alt="">
-                            </div>
-                            <div class="col">
-                                <img style="opacity: 0;" id="coupleImage7" class="d-block mx-auto rounded"
-                                    src="https://www.mordeo.org/files/uploads/2020/01/Couple-Romantic-Sunset-Silhouette-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-                                    alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img style="opacity: 0;" id="coupleImage8" class="d-block mx-auto rounded"
-                            src="https://w.forfun.com/fetch/8d/8d209d2587ce83b38fd82f77a6d6c1a6.jpeg" alt="">
-                    </div>
-                </div>
-            </div>
-        @endif
+                    <div class="column">
+                        @if ($count > 0)
+                            <img class="coupleImage1" style="height: 51.8% !important;"
+                                src="{{ asset('images/galeri/' . $galeri[0]->foto) }}" />
+                        @endif
+                        @if ($count > 1)
+                            <img class="coupleImage2" src="{{ asset('images/galeri/' . $galeri[1]->foto) }}" />
+                        @endif
+                        @if ($count > 2)
+                            <img class="coupleImage3" src="{{ asset('images/galeri/' . $galeri[2]->foto) }}" />
+                        @endif
 
-        <!-- Couple Story & Footage - Section 6 -->
-        <div class="couple-stories m-0">
-            <h1 style="padding: 3.5% 0;" id="love-story-text-sec6" class="text-center text-light">Love Story</h1>
+                    </div>
+                    <div class="column">
+                        @if ($count > 3)
+                            <img class="coupleImage4" src="{{ asset('images/galeri/' . $galeri[3]->foto) }}">
+                        @endif
+                        @if ($count > 4)
+                            <img class="coupleImage5" style="height: 51.8% !important;"
+                                src="{{ asset('images/galeri/' . $galeri[4]->foto) }}" />
+                        @endif
+                        @if ($count > 5)
+                            <img class="coupleImage6" src="{{ asset('images/galeri/' . $galeri[5]->foto) }}">
+                        @endif
 
-            <div style="margin-bottom: 5%;" class="d-flex align-items-center justify-content-center">
-                <div id="coupleStory1" class="row w-75">
-                    <div class="col-md">
-                        <img style="width: 50%; opacity: 0;" id="coupleStoryImage1" class="d-block mx-auto rounded"
-                            src="{{ $ceritacinta ? ($ceritacinta->cover1 ? asset('images/ceritacinta/' . $ceritacinta->cover1) : 'https://wallpapers.com/images/hd/couple-pictures-aayrqyfiw5ul3poe.jpg') : 'https://wallpapers.com/images/hd/couple-pictures-aayrqyfiw5ul3poe.jpg' }}"
-                            alt="">
                     </div>
-                    <div class="col-md">
-                        <h2 id="love-story-head-sec6" class="coupleStoryHeading1" style="color: #EBB760 !important;">
-                            {{ $ceritacinta ? ($ceritacinta->judulcerita1 ? $ceritacinta->judulcerita1 : 'HOW WE MEET') : 'HOW WE MEET' }}
-                        </h2>
-                        <hr style="width: 0; background-color: #EBB760 !important; color: #EBB760 !important; border: 0.3vh solid #EBB760 !important;"
-                            class="rounded coupleStoryLine1">
-                        <p id="love-story-desc-sec6" class="text-light loveStory1">
-                            {{ $ceritacinta
-                                ? ($ceritacinta->cerita1
-                                    ? $ceritacinta->cerita1
-                                    : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aliquid perferendis
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            saepe, illum amet sint. Deleniti ab harum dignissimos architecto tempore maiores, rerum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.')
-                                : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aliquid perferendis
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            saepe, illum amet sint. Deleniti ab harum dignissimos architecto tempore maiores, rerum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.' }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div style="margin-bottom: 5%;" class="d-flex align-items-center justify-content-center">
-                <div id="coupleStory2" class="row w-75 couple-story-container">
-                    <div class="col-md">
-                        <h2 id="love-story-head-sec6" class="coupleStoryHeading2" style="color: #EBB760 !important;">
-                            {{ $ceritacinta ? ($ceritacinta->judulcerita2 ? $ceritacinta->judulcerita2 : 'FIRST DATE') : 'FIRST DATE' }}
-                        </h2>
-                        <hr style="width: 0; background-color: #EBB760 !important; color: #EBB760 !important; border: 0.3vh solid #EBB760 !important;"
-                            class="rounded coupleStoryLine2">
-                        <p id="love-story-desc-sec6" class="text-light loveStory2">
-                            {{ $ceritacinta
-                                ? ($ceritacinta->cerita2
-                                    ? $ceritacinta->cerita2
-                                    : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aliquid perferendis
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            saepe, illum amet sint. Deleniti ab harum dignissimos architecto tempore maiores, rerum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.')
-                                : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aliquid perferendis
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            saepe, illum amet sint. Deleniti ab harum dignissimos architecto tempore maiores, rerum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.' }}
-                        </p>
-                    </div>
-                    <div class="col-md">
-                        <img style="width: 50%; opacity: 0;" id="coupleStoryImage2" class="d-block mx-auto rounded"
-                            src="{{ $ceritacinta ? ($ceritacinta->cover2 ? asset('images/ceritacinta/' . $ceritacinta->cover2) : 'https://wallpapers.com/images/hd/couple-pictures-aayrqyfiw5ul3poe.jpg') : 'https://wallpapers.com/images/hd/couple-pictures-aayrqyfiw5ul3poe.jpg' }}"
-                            alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex align-items-center justify-content-center">
-                <div id="coupleStory3" class="row w-75">
-                    <div class="col-md">
-                        <img style="width: 50%; opacity: 0;" id="coupleStoryImage3" class="d-block mx-auto rounded"
-                            src="{{ $ceritacinta ? ($ceritacinta->cover3 ? asset('images/ceritacinta/' . $ceritacinta->cover3) : 'https://wallpapers.com/images/hd/couple-pictures-aayrqyfiw5ul3poe.jpg') : 'https://wallpapers.com/images/hd/couple-pictures-aayrqyfiw5ul3poe.jpg' }}"
-                            alt="">
-                    </div>
-                    <div class="col-md">
-                        <h2 id="love-story-head-sec6" class="coupleStoryHeading3" style="color: #EBB760 !important;">
-                            {{ $ceritacinta ? ($ceritacinta->judulcerita3 ? $ceritacinta->judulcerita3 : "WE'RE FOREVER") : "WE'RE FOREVER" }}
-                        </h2>
-                        <hr style="width: 0; background-color: #EBB760 !important; color: #EBB760 !important; border: 0.3vh solid #EBB760 !important;"
-                            class="rounded coupleStoryLine3">
-                        <p id="love-story-desc-sec6" class="text-light loveStory3">
-                            {{ $ceritacinta
-                                ? ($ceritacinta->cerita3
-                                    ? $ceritacinta->cerita3
-                                    : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aliquid perferendis
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            saepe, illum amet sint. Deleniti ab harum dignissimos architecto tempore maiores, rerum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.')
-                                : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aliquid perferendis
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            saepe, illum amet sint. Deleniti ab harum dignissimos architecto tempore maiores, rerum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            facere eum recusandae voluptatibus quis aliquam eligendi corporis illo expedita laudantium,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            distinctio suscipit reprehenderit delectus! Rerum, ad tempore? Repudiandae, accusantium
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleniti. Voluptas.' }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="coupleFootage">
-                <h1 style="color: #EBB760 !important; font-family: 'Playball', serif; opacity: 0;" id="footageText"
-                    class="text-center mb-5">Our
-                    Footage</h1>
-                <div class="row">
-                    <div class="col-md">
-                        <iframe style="opacity: 0;" id="footageVideo" class="d-block mx-auto mb-5" width="560"
-                            height="315" src="https://www.youtube.com/embed/YZVAIqUK3H0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                    <div class="column">
+                        @if ($count > 6)
+                            <img class="coupleImage7" src="{{ asset('images/galeri/' . $galeri[6]->foto) }}" />
+                        @endif
+                        @if ($count > 7)
+                            <img class="coupleImage8" src="{{ asset('images/galeri/' . $galeri[7]->foto) }}" />
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
 
 
+        <!-- Couple Story & Footage - Section 6 -->
+        <div class="couple-stories m-0">
+            <div class="cc" @if ($ceritacinta) @else style="display: none;" @endif>
+                <h1 style="padding: 3.5% 0;" id="love-story-text-sec6" class="text-center text-light">Love Story
+                </h1>
+                <div @if ($ceritacinta->cover1) style="margin-bottom: 5%;" @else style="display: none;" @endif
+                    class="d-flex align-items-center justify-content-center">
+                    <div id="coupleStory1" class="row w-75">
+                        <div class="col-md">
+                            <img style="width: 432.38px; height: 288.83px; opacity: 0;" id="coupleStoryImage1"
+                                class="d-block mx-auto rounded"
+                                src="{{ $ceritacinta ? ($ceritacinta->cover1 ? asset('images/ceritacinta/' . $ceritacinta->cover1) : '') : '' }}"
+                                alt="">
+                        </div>
+                        <div class="col-md">
+                            <h2 id="love-story-head-sec6" class="coupleStoryHeading1"
+                                style="color: #EBB760 !important;">
+                                {{ $ceritacinta ? ($ceritacinta->judulcerita1 ? $ceritacinta->judulcerita1 : '') : '' }}
+                            </h2>
+                            <hr style="width: 0; background-color: #EBB760 !important; color: #EBB760 !important; border: 0.3vh solid #EBB760 !important;"
+                                class="rounded coupleStoryLine1">
+                            <p id="love-story-desc-sec6" class="text-light loveStory1">
+                                {{ $ceritacinta ? ($ceritacinta->cerita1 ? $ceritacinta->cerita1 : '') : '' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div @if ($ceritacinta->cover2) style="margin-bottom: 5%;" @else style="display: none;" @endif
+                    class="d-flex align-items-center justify-content-center">
+                    <div id="coupleStory2" class="row w-75 couple-story-container">
+                        <div class="col-md">
+                            <h2 id="love-story-head-sec6" class="coupleStoryHeading2"
+                                style="color: #EBB760 !important;">
+                                {{ $ceritacinta ? ($ceritacinta->judulcerita2 ? $ceritacinta->judulcerita2 : '') : '' }}
+                            </h2>
+                            <hr style="width: 0; background-color: #EBB760 !important; color: #EBB760 !important; border: 0.3vh solid #EBB760 !important;"
+                                class="rounded coupleStoryLine2">
+                            <p id="love-story-desc-sec6" class="text-light loveStory2">
+                                {{ $ceritacinta ? ($ceritacinta->cerita2 ? $ceritacinta->cerita2 : '') : '' }}
+                            </p>
+                        </div>
+                        <div class="col-md">
+                            <img style="width: 432.38px; height: 288.83px; opacity: 0;" id="coupleStoryImage2"
+                                class="d-block mx-auto rounded"
+                                src="{{ $ceritacinta ? ($ceritacinta->cover2 ? asset('images/ceritacinta/' . $ceritacinta->cover2) : '') : '' }}"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+                <div @if ($ceritacinta->cover3) @else style="display: none;" @endif
+                    class="d-flex align-items-center justify-content-center">
+                    <div id="coupleStory3" class="row w-75">
+                        <div class="col-md">
+                            <img style="width: 432.38px; height: 288.83px; opacity: 0;" id="coupleStoryImage3"
+                                class="d-block mx-auto rounded"
+                                src="{{ $ceritacinta ? ($ceritacinta->cover3 ? asset('images/ceritacinta/' . $ceritacinta->cover3) : '') : '' }}"
+                                alt="">
+                        </div>
+                        <div class="col-md">
+                            <h2 id="love-story-head-sec6" class="coupleStoryHeading3"
+                                style="color: #EBB760 !important;">
+                                {{ $ceritacinta ? ($ceritacinta->judulcerita3 ? $ceritacinta->judulcerita3 : '') : '' }}
+                            </h2>
+                            <hr style="width: 0; background-color: #EBB760 !important; color: #EBB760 !important; border: 0.3vh solid #EBB760 !important;"
+                                class="rounded coupleStoryLine3">
+                            <p id="love-story-desc-sec6" class="text-light loveStory3">
+                                {{ $ceritacinta ? ($ceritacinta->cerita3 ? $ceritacinta->cerita3 : '') : '' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="coupleFootage" @if ($prewed) @else style="display: none" @endif>
+                <h1 style="color: #EBB760 !important; font-family: 'Playball', serif; opacity: 0;" id="footageText"
+                    class="text-center mb-5">Our
+                    Footage</h1>
+                <div class="row">
+                    <div class="col-md">
+                        <video width="560" height="315" id="footageVideo" class="d-block mx-auto mb-5"
+                            controls>
+                            <source src="{{ asset('video/prewedding/' . $prewed->vidio) }}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
         <!-- Digital Envelope, Wedding Wish, & Couple Quote - Section 7 -->
         <div class="digiEnve">
+
+            <!-- Section 9 - Instagram Wedding Filter -->
+            <div class="imwf" @if ($weddingfilter) @else
+            style="display: none" @endif>
+                <div class="instagramWeddingFilter px-4 py-4 d-flex align-items-center justify-content-center"
+                    id="instagramWeddingFilter">
+                    <div class="instagramWeddingFilterWrapper">
+                        <h1 class="text-center text-light instagramWeddingFilterHeadingText py-2"
+                            id="instagramWeddingFilterHeadingText">
+                            Filter Instagram</h1>
+                        <img id="instagramWeddingFilterImage" class="d-block mx-auto w-50 mb-4"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5EtFyVdmyEjN-lpl75InTw356qpcWqXRnDI7G50FQZwh6PDL5rKaRXXF7TZuxbTbnIs&usqp=CAU"
+                            alt="">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a href="#" class="btn btn-dark text-light"
+                                id="instagramWeddingFilterButtonSend">Masukan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <!-- Digital Envelope -->
-            <h1 style="color: #EBB760 !important;" id="wedding-gift-text-sec7" class="text-center">Wedding Gift</h1>
-            <h5 id="wedding-gift-subtext-sec7" class="text-center text-light w-75 d-block mx-auto">Berkat dan
-                kedatangan
-                Anda ke pernikahan kami sudah
-                cukup bagi kami. Namun jika anda ingin memberikan kado kami menyediakan Amplop Digital untuk memudahkan
-                anda. Terima kasih.</h5>
-            <div style="padding: 4% 0;" class="d-flex align-items-center justify-content-center">
-                <div class="row w-75">
-                    <div style="opacity: 0;" id="paymentSelection" class="col-md mb-5">
-                        <h3 id="" class="text-center mb-2" style="color: transparent;">p</h3>
-                        <label class="form-label text-light">Pilih Bank</label>
-                        <select class="form-select form-select mb-3 text-light bg-dark border-0"
-                            aria-label="Large select example">
-                            <option class="text-light" selected>
-                                {{ $amplopdigital ? $amplopdigital->paymentvendor : 'BCA' }}</option>
-                        </select>
-                        <!-- <h3 style="font-family: 'Playball', serif;" class="text-light">BANK BCA(014)</h3> -->
-                        <h3 style="font-family: 'Playball', serif; font-size: 2.8vh;" class="text-light">Account
-                            Number
-                            : {{ $amplopdigital ? $amplopdigital->noakun : '0182548765' }}</h3>
-                        <h3 style="font-family: 'Playball', serif; font-size: 2.8vh;" class="text-light">Account Name
-                            :
-                            {{ $amplopdigital ? $amplopdigital->namaakun : 'Unknown People' }}</h3>
+            <div class="amdg" @if ($amplopdigital) @else style="display: none;" @endif>
+                <h1 style="color: #EBB760 !important; opacity: 6;" id="wedding-gift-text-sec7" class="text-center">
+                    Wedding Gift</h1>
+                <h5 id="wedding-gift-subtext-sec7" class="text-center text-light w-75 d-block mx-auto">Berkat dan
+                    kedatangan
+                    Anda ke pernikahan kami sudah
+                    cukup bagi kami. Namun jika anda ingin memberikan kado kami menyediakan Amplop Digital untuk
+                    memudahkan
+                    anda. Terima kasih.</h5>
+                <div style="padding: 4% 0;" class="d-flex align-items-center justify-content-center">
+                    <div class="row d-block mx-auto weddingGiftWrappersz">
+                        <div style="opacity: 0;" id="paymentSelection" class="col-md mb-5">
+                            <h3 id="" class="text-center mb-2" style="color: transparent;">p</h3>
+                            <label class="form-label text-light">Pilih Bank</label>
+                            <select class="form-select form-select mb-3 text-light bg-dark border-0"
+                                aria-label="Large select example">
+                                <option class="text-light" selected>
+                                    {{ $amplopdigital ? $amplopdigital->paymentvendor : '' }}</option>
+                            </select>
+                            <!-- <h3 style="font-family: 'Playball', serif;" class="text-light">BANK BCA(014)</h3> -->
+                            <h3 style="font-family: 'Playball', serif; font-size: 2.8vh;" class="text-light">
+                                Account
+                                Number
+                                : {{ $amplopdigital ? $amplopdigital->noakun : '' }}</h3>
+                            <h3 style="font-family: 'Playball', serif; font-size: 2.8vh;" class="text-light">
+                                Account
+                                Name
+                                :
+                                {{ $amplopdigital ? $amplopdigital->namaakun : '' }}</h3>
+                        </div>
+                        <div style="display: none;" id="paymentForm" class="col-md mb-5">
+                            <h3 id="wedding-gift-form-text" class="text-center text-light mb-2">Tolong isi form
+                                dibawah
+                                ini
+                            </h3>
+                            <!-- Sender -->
+                            <label class="form-label text-light">Nama</label>
+                            <input type="text" class="form-control bg-dark text-light border-0 mb-3"
+                                aria-describedby="passwordHelpBlock">
+
+                            <!-- Sender Name -->
+                            <label class="form-label text-light">Nama Pemilik Rekening</label>
+                            <input type="text" class="form-control bg-dark text-light border-0 mb-3"
+                                aria-describedby="passwordHelpBlock">
+
+                            <!-- Amount -->
+                            <label class="form-label text-light">Jumlah</label>
+                            <input type="text" class="form-control bg-dark text-light border-0 mb-3"
+                                aria-describedby="passwordHelpBlock">
+
+                            <!-- Message -->
+                            <label class="form-label text-light">Pesan Untuk Mempelai</label>
+                            <textarea name="" id="" cols="20" rows="5"
+                                class="form-control bg-dark text-light border-0"></textarea>
+
+                            <a href="#" class="btn btn-dark text-light my-3 float-end">Kirim</a>
+                        </div>
                     </div>
-                    <div style="opacity: 0;" id="paymentForm" class="col-md mb-5">
-                        <h3 id="wedding-gift-form-text" class="text-center text-light mb-2">Tolong isi form dibawah
-                            ini
-                        </h3>
-                        <!-- Sender -->
-                        <label class="form-label text-light">Nama</label>
-                        <input type="text" class="form-control bg-dark text-light border-0 mb-3"
-                            aria-describedby="passwordHelpBlock">
-
-                        <!-- Sender Name -->
-                        <label class="form-label text-light">Nama Pemilik Rekening</label>
-                        <input type="text" class="form-control bg-dark text-light border-0 mb-3"
-                            aria-describedby="passwordHelpBlock">
-
-                        <!-- Amount -->
-                        <label class="form-label text-light">Jumlah</label>
-                        <input type="text" class="form-control bg-dark text-light border-0 mb-3"
-                            aria-describedby="passwordHelpBlock">
-
-                        <!-- Message -->
-                        <label class="form-label text-light">Pesan Untuk Mempelai</label>
-                        <textarea name="" id="" cols="20" rows="5"
-                            class="form-control bg-dark text-light border-0"></textarea>
-
-                        <a href="#" class="btn btn-dark text-light my-3 float-end">Kirim</a>
+                </div>
+            </div>
+            {{-- RSVP --}}
+            <div class="rsvp"
+                @if ($kodeTamu) @else
+                style="display: none;" @endif>
+                <div class="rsvpWrapper">
+                    <input type="hidden" name="kdtamu" id="kdtamu"
+                    value="{{ $kodeTamu ? $kodeTamu->kode_tamu : null }}">
+                    <h1 class="rsvpHeadingText">RSVP</h1>
+                    <h1 class="rsvpSubHeadingText">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Laudantium,
+                        molestiae!</h1>
+                    <div class="custom-select duplicate-select">
+                        <button class="select-button" role="combobox" aria-labelledby="duplicate-select button"
+                            aria-haspopup="listbox" aria-expanded="false" aria-controls="duplicate-select-dropdown">
+                            <span class="selected-value text-dark">Kehadiran</span>
+                            <span class="arrow"></span>
+                        </button>
+                        <ul class="select-dropdown" role="listbox" id="duplicate-select-dropdown">
+                            <li role="option">
+                                <input type="radio" id="duplicate-hadir" name="duplicate-social-account" />
+                                <label for="duplicate-hadir" class="text-dark"><i class="bx bxl-github"></i>
+                                </label>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="peopleYouBringRSVPBox my-3">
+                        <div class="row">
+                            <div class="col-1">
+                                <span class="min rsvpButton rounded-circle text-white">
+                                    <i class="fa fa-minus text-white"></i>
+                                </span>
+                            </div>
+                            <div class="col">
+                                <input class="form-control peopleYouBringInput" type="text" name="qty"
+                                    id="qty" maxlength="12"
+                                    value="{{ $kodeTamu ? ($kodeTamu->jumlahkehadiran ? $kodeTamu->jumlahkehadiran : '0') : '0' }}" />
+                            </div>
+                            <div class="col-1">
+                                <span class="plus rsvpButton rounded-circle text-white float-end">
+                                    <i class="fa fa-plus text-white"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn rsvpConfirmButton" id="kirim-rsvp">Confirm</a>
                 </div>
             </div>
 
             <!-- Wedding Wish -->
             <div class="d-flex align-items-center justify-content-center">
                 <div class="row w-75 weddingWishContainer">
-                    <div class="col-md mb-4">
-                        <h1 style="opacity: 0;" id="weddingWishTextSec7" class="text-center text-light mb-3">Latest
-                            Wedding Wishes</h1>
-                        <div class="weddingWishLogWrapper">
-                            <div class="weddingWishLog">
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 1</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 2</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 3</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 4</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 5</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 6</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                                <div class="wishMessage p-3">
-                                    <h2 id="weddingWishUserName" class="text-light">User 7</h2>
-                                    <h3 id="weddingWishUserMessage" class="text-light">Happy Wedding!</h3>
-                                    <h4 id="weddingWishTimestamp">14 Oct 2023, 23:50</h4>
-                                    <hr class="bg-light border-light border-3 rounded w-75 float-start pt-0 my-0">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md">
                         <div style="padding-bottom: 6%; opacity: 0;" class="weddingWish">
                             <h1 id="wedding-wish-text-sec7" class="text-center text-light mb-3">Wedding Wish</h1>
@@ -645,8 +561,8 @@
                                     aria-describedby="passwordHelpBlock" id="nama-ucapan" name="nama-ucapan">
                             </div>
                             <label class="form-label text-light">Pesan Untuk Mempelai</label>
-                            <textarea name="pesan-ucapan"  cols="30" rows="10"
-                                class="form-control text-light bg-dark d-block mx-auto border-0" id="pesan-ucapan">
+                            <textarea name="pesan-ucapan" id="pesan-ucapan" cols="30" rows="10"
+                                class="form-control text-light bg-dark d-block mx-auto border-0">
                             </textarea>
                             <div class="py-4 d-block mx-auto">
                                 <button type="button" class="btn btn-dark text-light float-end"
@@ -654,6 +570,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md mb-4">
+                        <h1 style="opacity: 0;" id="weddingWishTextSec7" class="text-center text-light mb-3">
+                            Latest
+                            Wedding Wishes</h1>
+                        <div class="weddingWishLogWrapper">
+                            <div class="weddingWishLog">
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -661,10 +588,10 @@
             <div class="coupleQuote mt-4">
                 <h3 id="couple-quote-sec7" class="text-light text-center mt-5">
                 </h3>
-                <h3 style="color: #EBB760 !important;" id="coupleName">{{ $mempelai ? $mempelai->namalaki : 'Adi' }}
+                <h3 style="color: #EBB760 !important;" id="coupleName">{{ $mempelai ? $mempelai->namalaki : '' }}
                     &
-                    {{ $mempelai ? $mempelai->namaperempuan : 'Aci' }}</h3>
-                <h3 id="coupleWeddingDate">{{ $tanggalAcara ? $tanggalAcara : '22 Juli 2014' }}</h3>
+                    {{ $mempelai ? $mempelai->namaperempuan : '' }}</h3>
+                <h3 id="coupleWeddingDate">{{ $tanggalAcara ? $tanggalAcara : '' }}</h3>
             </div>
 
 
@@ -680,17 +607,21 @@
             <!-- <div class="music-box auto" id="music-box"></div> -->
             <img class="music-box" src="/tema1/img/musicPlayer.png" alt="">
         </section>
-        <audio id="musicPlayer" class="d-none" src="/tema1/music/sample-music.mp3">
+        <audio id="musicPlayer" class="d-none"
+            src="{{ $musik ? ($musik->musikMaster->musik ? asset('musik/' . $musik->musikMaster->musik) : '/tema1/music/sample-music.mp3') : '/tema1/music/sample-music.mp3' }}">
         </audio>
         <!-- <a id="button" title="button">play sound</a> -->
     </div>
 
-    <script src="/tema1/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/tema1/"></script>
     <script src="/tema1/jquery/jquery-3.6.3.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
     <script src="/tema1/js/index.js"></script>
 </body>
 
-<script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
+</html>
+
+<script src="/assets/vendors/jquery-toast-plugin-master/src/jquery.toast.js"></script>
 <script>
     $(document).ready(function() {
 
@@ -702,7 +633,7 @@
             const nama = $('#nama-ucapan').val()
             const ucapan = $('#pesan-ucapan').val()
 
-            if (nama != null && ucapan != null) {
+            if (nama != null && ucapan != null && nama != '' && ucapan != '') {
                 $.ajax({
                     url: `{{ route('ucapan.store', ['id' => ':id']) }}`.replace(':id', id),
                     method: 'POST',
@@ -716,6 +647,8 @@
                     success: function(data) {
                         if (data.code === 1) {
                             ucapanUndangan()
+                            $('#nama-ucapan').val('')
+                            $('#pesan-ucapan').val('')
                         } else {
                             console.log('error');
                         }
@@ -726,6 +659,64 @@
                 })
             } else {
                 ucapanUndangan()
+            }
+
+        })
+
+        $('#kirim-rsvp').on('click', function(e) {
+            e.preventDefault()
+            const id = $('#user_id').val()
+            const kodetamu = $('#kdtamu').val()
+            const jumlahtamu = $('#qty').val()
+
+            if (kodetamu != null && jumlahtamu != 0) {
+                $.ajax({
+                    url: `{{ route('rsvp.store', ['id' => ':id']) }}`.replace(':id', id),
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        kodetamu: kodetamu,
+                        jumlahtamu: jumlahtamu
+                    },
+                    success: function(data) {
+                        if (data.code === 1) {
+                            $.toast({
+                                heading: 'Berhasil',
+                                text: 'RSVP berhasil diperbarui.',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'success',
+                                hideAfter: 3500
+
+                            })
+                        } else {
+                            $.toast({
+                                heading: 'Gagal',
+                                text: 'Error',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'error',
+                                hideAfter: 3500
+
+                            })
+                        }
+                    },
+                    error: function(res) {
+                        alert('Terjadi kesalahan: ' + res.responseText);
+                    }
+                })
+            } else {
+                $.toast({
+                    heading: 'Gagal',
+                    text: 'Jumlah Tamu minimal 1 orang.',
+                    position: 'top-right',
+                    loaderBg: '#ff6849',
+                    icon: 'error',
+                    hideAfter: 3500
+
+                })
             }
 
         })

@@ -1,0 +1,94 @@
+.animated {
+  opacity: 0;
+}
+
+.spining {
+  animation: spining 2s linear infinite;
+}
+@keyframes spining {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+} 
+
+@keyframes slideleft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideright {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideleft 1s ease-in-out;
+  animation-delay: 1s;
+}
+
+.slide-right {
+  animation: slideright 1s ease-in-out;
+  animation-delay: 1s;
+}
+
+.slide-up {
+  animation: slideup 1s ease-in-out;
+  animation-delay: 1s;
+}
+
+.slide-down {
+  animation: slidedown 0.7s ease-in-out;
+  animation-delay: 1s;
+}
+
+.fades {
+  animation: fade 0.7s ease-in-out;
+  animation-delay: 1s;
+}

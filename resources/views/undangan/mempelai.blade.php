@@ -66,7 +66,7 @@
                                                             style="color: #3D5782; font-weight:bold">Nama Lengkap Pria <span
                                                                 class="text-danger">*</span></label>
                                                         <input type="text" id="namalengkaplaki" class="form-control"
-                                                            name="namalengkaplaki" placeholder="Nama Lengkap Pria"
+                                                            name="namalengkaplaki"
                                                             value="{{ $data ? $data->namalengkaplaki : '' }}">
                                                     </div>
                                                 </div>
@@ -75,8 +75,7 @@
                                                         <label for="namalaki" style="color: #3D5782; font-weight:bold">Nama
                                                             Panggilan Pria <span class="text-danger">*</span></label>
                                                         <input type="text" id="namalaki" class="form-control"
-                                                            name="namalaki" placeholder="Nama Panggilan Pria"
-                                                            value="{{ $data ? $data->namalaki : '' }}">
+                                                            name="namalaki" value="{{ $data ? $data->namalaki : '' }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -85,7 +84,7 @@
                                                             style="color: #3D5782; font-weight:bold">Nama Ayah Pria <span
                                                                 class="text-danger">*</span></label>
                                                         <input type="text" id="namabapaklaki" class="form-control"
-                                                            name="namabapaklaki" placeholder="Nama Ayah Pria"
+                                                            name="namabapaklaki"
                                                             value="{{ $data ? $data->namabapaklaki : '' }}">
                                                     </div>
                                                 </div>
@@ -95,7 +94,7 @@
                                                             style="color: #3D5782; font-weight:bold">Nama Ibu Pria <span
                                                                 class="text-danger">*</span></label>
                                                         <input type="text" id="namaibulaki" class="form-control"
-                                                            name="namaibulaki" placeholder="Nama Ibu Pria"
+                                                            name="namaibulaki"
                                                             value="{{ $data ? $data->namaibulaki : '' }}">
                                                     </div>
                                                 </div>
@@ -105,7 +104,7 @@
                                                             style="color: #3D5782; font-weight:bold">Urutan Anak Pria <span
                                                                 class="text-danger">*</span></label>
                                                         <input type="text" id="urutananak_laki" class="form-control"
-                                                            name="urutananak_laki" placeholder="Urutan Anak Pria"
+                                                            name="urutananak_laki"
                                                             value="{{ $data ? $data->urutananak_laki : '' }}">
                                                     </div>
                                                 </div>
@@ -118,7 +117,6 @@
                                                             <span class="input-group-text" id="basic-addon1">@</span>
                                                             <input type="text" id="instagram_laki"
                                                                 class="form-control" name="instagram_laki"
-                                                                placeholder="Username Instagram"
                                                                 value="{{ $data ? $data->instagram_laki : '' }}">
                                                         </div>
                                                     </div>
@@ -169,7 +167,6 @@
                                                             <span class="text-danger">*</span></label>
                                                         <input type="text" id="namalengkapperempuan"
                                                             class="form-control" name="namalengkapperempuan"
-                                                            placeholder="Nama Lengkap Wanita"
                                                             value="{{ $data ? $data->namalengkapperempuan : '' }}">
                                                     </div>
                                                 </div>
@@ -179,7 +176,7 @@
                                                             style="color: #3D5782; font-weight:bold">Nama
                                                             Panggilan Wanita <span class="text-danger">*</span></label>
                                                         <input type="text" id="namaperempuan" class="form-control"
-                                                            name="namaperempuan" placeholder="Nama Panggilan Wanita"
+                                                            name="namaperempuan"
                                                             value="{{ $data ? $data->namaperempuan : '' }}">
                                                     </div>
                                                 </div>
@@ -190,7 +187,6 @@
                                                             Wanita <span class="text-danger">*</span></label>
                                                         <input type="text" id="namabapakperempuan"
                                                             class="form-control" name="namabapakperempuan"
-                                                            placeholder="Nama Ayah Wanita"
                                                             value="{{ $data ? $data->namabapakperempuan : '' }}">
                                                     </div>
                                                 </div>
@@ -200,7 +196,7 @@
                                                             style="color: #3D5782; font-weight:bold">Nama Ibu
                                                             Wanita <span class="text-danger">*</span></label>
                                                         <input type="text" id="namaibuperempuan" class="form-control"
-                                                            name="namaibuperempuan" placeholder="Nama Ibu Wanita"
+                                                            name="namaibuperempuan"
                                                             value="{{ $data ? $data->namaibuperempuan : '' }}">
                                                     </div>
                                                 </div>
@@ -212,7 +208,6 @@
                                                             <span class="text-danger">*</span></label>
                                                         <input type="text" id="urutananak_perempuan"
                                                             class="form-control" name="urutananak_perempuan"
-                                                            placeholder="Urutan Anak Wanita"
                                                             value="{{ $data ? $data->urutananak_perempuan : '' }}">
                                                     </div>
                                                 </div>
@@ -225,7 +220,6 @@
                                                             <span class="input-group-text" id="basic-addon1">@</span>
                                                             <input type="text" id="instagram_perempuan"
                                                                 class="form-control" name="instagram_perempuan"
-                                                                placeholder="Username Instagram"
                                                                 value="{{ $data ? $data->instagram_perempuan : '' }}">
                                                         </div>
 
