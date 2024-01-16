@@ -83,7 +83,7 @@
                             <div class="drag-and-drop text-center">
                                 <input type="file" class="form-control image-input" accept="image/*" id="thumbnail_tema"
                                     name="thumbnail_tema" required>
-                                <p class="text-center">Max Size 2 MB</p>
+                                <p class="text-center">Max Size 5 MB</p>
                                 <div id="image-preview" class="text-center img-flex"></div>
                                 <div class="invalid-feedback"></div>
                             </div>
@@ -146,7 +146,7 @@
                                 <input type="hidden" name="thumbnailbefore_name" id="thumbnailbefore_name">
                                 <input type="file" class="form-control image-input-2" accept="image/*"
                                     id="thumbnail_tema" name="thumbnail_tema_edit">
-                                <p class="text-center">Max Size 2 MB</p>
+                                <p class="text-center">Max Size 5 MB</p>
                                 <div id="image-preview-2" class="text-center img-flex">
                                     <img id="preview-image" src="" class="img-thumbnail" alt="">
                                 </div>

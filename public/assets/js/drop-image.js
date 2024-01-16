@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayImage(file) {
         if (file && file.type.startsWith("image/")) {
-            if (file.size > 2024 * 1024) {
-                alert("Ukuran maksimal 2MB.");
+            if (file.size > 5024 * 1024) {
+                alert("Ukuran maksimal 5MB.");
                 input.value = ""; // Mengosongkan input tipe file
                 preview.innerHTML = "";
 
