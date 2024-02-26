@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'superadmin@example.com',
             'password' => Hash::make('password'),
+            'whatsapp' => '0829121332'
         ]);
 
         $user->assignRole('Super Admin');

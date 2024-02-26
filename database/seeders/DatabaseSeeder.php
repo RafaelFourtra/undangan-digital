@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             PaketSeeder::class,
             UserSeeder::class,
             PaymentVendorSeeder::class,
+            TemaMasterSeeder::class
         ]);
     }
 }

@@ -255,8 +255,12 @@
             .container-text h3 {
                 font-size: 100px;
             }
-        }
 
+            .protokol-text {
+                font-size: 13px;
+            }
+        }
+        
         .section-title {
             font-family: "Viaoda Libre", serif;
         }
@@ -315,6 +319,8 @@
             border-radius: 50%;
             color: rgb(80, 18, 18);
         }
+
+
     </style>
 </head>
 
@@ -758,7 +764,7 @@
     </div>
     @endif
     @if ($protokol != null)
-    <div class="section-13 row text-center my-4 mb-5 animated">
+    <div class="section-13 row text-center animated" style="margin-bottom:80px;">
         <div class="col-12">
             <h3 class="animated section-title" anim="slide-up">
                 Protect Yourself And Other From <br />
@@ -770,26 +776,26 @@
                         <div class="col">
                             <div class="protocol-card animated" anim="slide-left" delay="2">
                                 <img src="/tema7/img/Distancing.svg" alt="" />
-                                <p>SOCIAL DISTANCING</p>
+                                <p class="protokol-text">SOCIAL DISTANCING</p>
                             </div>
                         </div>
                         <div class="col">
                             <div class="protocol-card animated" anim="slide-right" delay="2.2">
                                 <img src="/tema7/img/Mask.svg" alt="" />
-                                <p>WEARING A MASK</p>
+                                <p class="protokol-text">WEARING A MASK</p>
                             </div>
                         </div>
                         <div class="w-100 mb-3"></div>
                         <div class="col">
                             <div class="protocol-card animated p-4" anim="slide-left" delay="2.4">
                                 <img src="/tema7/img/Hand Sanitizer.svg" alt="" />
-                                <p>WASH YOUR HAND</p>
+                                <p class="protokol-text">WASH YOUR HAND</p>
                             </div>
                         </div>
                         <div class="col">
                             <div class="protocol-card animated" anim="slide-right" delay="2.6">
                                 <img src="/tema7/img/Temperatur Gun.svg" alt="" />
-                                <p>TEMPERATURE CHECK</p>
+                                <p class="protokol-text">TEMPERATURE CHECK</p>
                             </div>
                         </div>
                     </div>
