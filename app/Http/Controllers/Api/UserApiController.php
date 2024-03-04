@@ -12,6 +12,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Auth\Events\Registered;
+
 
 class UserApiController extends Controller
 {
@@ -36,7 +38,7 @@ class UserApiController extends Controller
         return (new ApiUserResource($user))->response()->setStatusCode(201);
     }
 
-    public function login(ApiUserLoginRequest $request): ApiUserResource
+    public function login(ApiUserLoginRequest $request): JsonResponse
     {
         $data = $request->validated();
 
@@ -54,6 +56,9 @@ class UserApiController extends Controller
         $user->remember_token = Str::uuid()->toString();
         $user->save();
 
-        return new ApiUserResource($user);
+        $user->assignRole('Customer');
+        event(new Registered($user));
+
+        return (new ApiUserResource($user))->response()->setStatusCode(200);;
     }
 }

@@ -18,7 +18,7 @@ class ApiUserResource extends JsonResource
             'id' => $this->id,
             'email' => $this->email,
             'name' => $this->name,
-            'token' => $this->whenNotNull($this->token)
+            'token' => $this->whenNotNull($this->remember_token)
         ];
     }
 }

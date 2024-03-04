@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\OrderApiController;
 use App\Http\Controllers\Api\TemaMasterApiController;
 use App\Http\Controllers\Api\UserApiController;
 use Illuminate\Http\Request;
@@ -23,4 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('tema', [TemaMasterApiController::class, 'get'])->name('temamasterapi.get');
 Route::post('users/register', [UserApiController::class, 'register'])->name('users.register');
 Route::post('users/login', [UserApiController::class, 'login'])->name('users.login');
+Route::post('order', [OrderApiController::class, 'order'])->name('order.store');
+
 

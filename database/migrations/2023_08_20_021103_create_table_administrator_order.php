@@ -14,12 +14,21 @@ return new class extends Migration
         Schema::create('order_t', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('admin_id');
+            $table->integer('admin_id')->nullable();
+            $table->string('mempelaipria')->nullable();
+            $table->string('mempelaiwanita')->nullable();
+            $table->string('judulundangan')->nullable();
+            $table->string('tglpernikahan')->nullable();
+            $table->string('gmaps')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('gedung')->nullable();
+            $table->string('kota')->nullable();
             $table->string('domain')->nullable();
-            $table->string('paket');
-            $table->string('harga');
+            $table->string('paket')->nullable();
+            $table->string('harga')->nullable();
+            $table->string('buktitransfer')->nullable();
             $table->dateTime('tanggal_order');
-            $table->date('expired');
+            $table->date('expired')->nullable();
             $table->enum('status', [0, 1]);
             $table->timestamps();
             $table->softDeletes();

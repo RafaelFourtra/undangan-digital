@@ -22,7 +22,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-       
+
         $paket = PaketModel::all();
 
         return view('administrator.order', compact('paket'));
@@ -54,6 +54,7 @@ class OrderController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'whatsapp' => '0892172812',
             'password' => Hash::make($request->password),
         ]);
 
@@ -81,7 +82,7 @@ class OrderController extends Controller
         $template = TemplatePesanModel::create([
             'user_id' => $newUserId,
             'title' => 'Undangan Pernikahan',
-            'templatepesan' => 
+            'templatepesan' =>
             "Kepada Yth,
             {nama_tamu} 
                         
@@ -89,7 +90,7 @@ class OrderController extends Controller
                         
             Info lebih lengkap klik link dibawah ini {link_undangan} Atas Kehadiran dan Do'a Restunya Kami Ucapkan Terimakasih."
         ]);
-       
+
         if ($user && $order && $template) {
             $mailData = [
                 'nama' => $request->name,
@@ -136,7 +137,7 @@ class OrderController extends Controller
         //
     }
 
-    public function get()   
+    public function get()
     {
         $data = OrderModel::with('user')->get();
 
