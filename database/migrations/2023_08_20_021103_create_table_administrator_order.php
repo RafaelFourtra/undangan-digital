@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('domain')->nullable();
             $table->string('paket')->nullable();
             $table->string('harga')->nullable();
+            $table->integer('tema_id');
             $table->string('buktitransfer')->nullable();
             $table->dateTime('tanggal_order');
             $table->date('expired')->nullable();
