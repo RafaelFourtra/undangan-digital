@@ -28,7 +28,6 @@
     animation-name: openingSlideBackgroundAnimation;
     animation-duration: 3s;
     transition: ease-in;
-    /* opacity: 0; */
 }
 
 .openingSlide .container {

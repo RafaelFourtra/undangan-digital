@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/tema1/css/main.css">
     <title>Online Invitation</title>
     <link rel="stylesheet" href="/assets/vendors/jquery-toast-plugin-master/src/jquery.toast.css">
-
 </head>
 
 <body>

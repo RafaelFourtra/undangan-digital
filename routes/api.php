@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('tema', [TemaMasterApiController::class, 'get'])->name('temamasterapi.get');
+Route::get('paket', [TemaMasterApiController::class, 'getPaket'])->name('paketmasterapi.get');
 Route::post('users/register', [UserApiController::class, 'register'])->name('users.register');
 Route::post('users/login', [UserApiController::class, 'login'])->name('users.login');
 

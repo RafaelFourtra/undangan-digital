@@ -30,6 +30,7 @@
 
 * {
     text-decoration: none !important;
+    color: transparent !important;
     box-sizing: border-box;
 }
 
@@ -111,6 +112,25 @@ body {
     opacity: 0;
 }
 
+@media only screen and (max-width: 600px) {
+    #welcoming-sentences-sec1 {
+        font-family: 'Playball', serif;
+        font-weight: 400;
+        z-index: 0;
+        font-size: 0vh;
+        opacity: 0;
+        font-size: 2.9vh !important;
+    }
+
+    #wedding-date-sec1 {
+        font-family: 'Playball', serif;
+        font-weight: 400;
+        font-size: 0;
+        opacity: 0;
+        font-size: 2.2vh !important;
+    }
+}
+
 
 
 
@@ -163,8 +183,8 @@ body {
 
 @media only screen and (max-width: 600px) {
     .overlay-container .ornament {
-        max-width: 450px;
-        max-height: 450px;
+        max-width: 460px !important;
+        max-height: 460px !important;
     }
 }
 
@@ -181,7 +201,7 @@ body {
     #groomProfileImage,
     #brideProfileImage {
         width: 90% !important;
-        height: 90% !important;
+        height: 55vh !important;
         max-width: none;
     }
 
@@ -214,6 +234,17 @@ body {
     #groom-name,
     #bride-name {
         font-size: 6vh;
+    }
+
+    #groomProfileImage,
+    #brideProfileImage {
+        max-width: 100%;
+        height: 65vh !important;
+    }
+
+    .overlay-container .ornament {
+        max-width: 420px;
+        max-height: 420px;
     }
 }
 
@@ -304,15 +335,15 @@ body {
 
 @media (max-width: 768px) {
     .countdown-box .countdown {
-        width: 75%;
+        width: 95%;
     }
 
     .countdown-box h2 {
-        font-size: 4.5vh;
+        font-size: 3.5vh;
     }
 
     .countdown-box h4 {
-        font-size: 2.5vh;
+        font-size: 1.5vh;
     }
 }
 
@@ -322,11 +353,25 @@ body {
     }
 
     .countdown-box h2 {
-        font-size: 4h;
+        font-size: 4vh;
     }
 
     .countdown-box h4 {
-        font-size: 2h;
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 390px) {
+    .countdown-box .countdown {
+        width: 95%;
+    }
+
+    .countdown-box h2 {
+        font-size: 5.5vh;
+    }
+
+    .countdown-box h4 {
+        font-size: 2.6vh;
     }
 }
 
@@ -345,6 +390,7 @@ body {
 
 #liveStreamingText {
     font-family: 'Playball', serif;
+    font-size: 6.5vh;
     color: #EBB760 !important;
     opacity: 0;
 }
@@ -363,7 +409,7 @@ body {
 @media (max-width: 768px) {
     #liveStreamingSubText {
         font-family: 'Playball', serif;
-        font-size: 2.5vh;
+        font-size: 2vh;
         font-style: italic;
         width: 85%;
         display: block;
@@ -426,7 +472,7 @@ body {
 
     .viewMapButton {
         font-size: 2vh !important;
-
+        width: 65% !important;
     }
 }
 
@@ -523,7 +569,7 @@ body {
     margin-bottom: 5%;
     width: 95%;
     height: 25%;
-    /* filter: grayscale(1) brightness(0.5); */
+    filter: grayscale(1) brightness(0.5);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s linear;
@@ -675,7 +721,7 @@ label {
     #wedding-gift-subtext-sec7 {
         font-family: 'Elsie', serif;
         font-style: italic;
-        font-size: 3vh;
+        font-size: 1.9vh !important;
         opacity: 0;
         width: 85% !important;
     }
@@ -800,7 +846,7 @@ label {
 /* RSVP */
 .rsvp {
     display: block;
-    margin-bottom:  130px;
+    margin: 0 auto;
     padding-top: 0;
     padding-bottom: 0;
     /* background-image: url('https://media.istockphoto.com/id/639644728/pt/foto/texture-of-light-cream-paper-background-for-design-with-copy.jpg?s=170667a&w=0&k=20&c=8-YcFj8Hp88QvutkAsJKIhIZhGQNOtX1hU0rNvWT0r4='); */
@@ -811,17 +857,19 @@ label {
     width: 54%;
     display: block;
     margin: 0 auto;
-    margin-bottom: 5%;
+    margin-bottom: .5%;
 }
 
 .rsvpHeadingText {
     font-family: 'Anglecia';
+    font-size: 5.5vh;
     text-align: center;
     color: #EBB760 !important;
 }
 
 .rsvpSubHeadingText {
     font-family: 'Anglecia';
+    font-size: 3vh;
     text-align: center;
     color: white !important;
     margin-bottom: 7vh;
@@ -846,7 +894,6 @@ label {
 }
 
 .peopleYouBringInput {
-    width: 100%;
     text-align: center;
     color: black !important;
 }
@@ -864,7 +911,6 @@ label {
     font-size: 2.5vh;
     padding: 1% 4%;
     transition: .2s ease-in-out;
-    width: 100%;
 }
 
 .rsvpConfirmButton:hover {
@@ -881,72 +927,115 @@ label {
     .rsvp {
         width: 90%;
         display: block;
-        margin: 15% auto;
+        margin: 1% auto;
     }
 
     .rsvpWrapper {
         padding: 2.5%;
-        width: auto;
+        width: 90%;
         display: block;
-        margin-bottom: 130px;
+        margin: 0 auto;
+        margin-bottom: 25%;
     }
 
     .rsvpHeadingText {
         font-family: 'Anglecia';
+        font-size: 5.5vh;
         text-align: center;
         color: #794b28;
+        margin-bottom: 2.5vh;
     }
 
     .rsvpButton {
-        padding: 100% !important;
+        padding: 15px;
         margin: auto;
         cursor: pointer;
         background: #ce834a;
         color: white;
-        width: 25px;
-        height: auto !important;
+        width: 100%;
+        max-width: 200px;
         text-align: center;
         display: inline-block;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-}
 
+    .peopleYouBringInput {
+        text-align: center;
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .rsvpConfirmButton {
+        background-color: #212529;
+        color: white !important;
+        text-decoration: none;
+        text-align: center;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        transition: .2s ease-in-out;
+        display: block;
+        margin: 0 auto;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .rsvp {
         width: 90%;
         display: block;
-        margin: 15% auto;
+        margin: 1% auto;
     }
 
     .rsvpWrapper {
         padding: 2.5%;
-        width: auto;
+        width: 90%;
         display: block;
-        margin-bottom: 130px;
+        margin: 0 auto;
+        margin-bottom: 25%;
     }
 
     .rsvpHeadingText {
         font-family: 'Anglecia';
+        font-size: 5.5vh;
         text-align: center;
         color: #794b28;
+        margin-bottom: 2.5vh;
     }
 
     .rsvpButton {
-        padding: 100% !important;
+        padding: 15px;
         margin: auto;
         cursor: pointer;
         background: #ce834a;
         color: white;
-        width: 25px;
-        height: auto !important;
+        width: 100%;
+        max-width: 200px;
         text-align: center;
         display: inline-block;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .peopleYouBringInput {
+        text-align: center;
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .rsvpConfirmButton {
+        background-color: #212529;
+        color: white !important;
+        text-decoration: none;
+        text-align: center;
+        font-size: 2.5vh;
+        padding: 1% 4%;
+        transition: .2s ease-in-out;
+        display: block;
+        margin: 0 auto;
     }
 }
 

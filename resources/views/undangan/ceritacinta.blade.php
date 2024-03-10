@@ -102,7 +102,7 @@
                                                                     Pilih
                                                                 </button>
                                                                 <input type="hidden" name="cover2before" id="cover2before"
-                                                                    value="{{ $data ? $data->cover1 : null }}">
+                                                                    value="{{ $data ? $data->cover2 : null }}">
                                                                 <input type="file" class="form-control image-input-2"
                                                                     accept="image/*" id="cover2" name="cover2" hidden>
                                                                 <div class="invalid-feedback"></div>
@@ -150,9 +150,8 @@
                                                                     <i class="fa-solid fa-folder-open me-2 mt-1"></i>
                                                                     Pilih
                                                                 </button>
-                                                                <input type="hidden" name="cover2before"
-                                                                    id="cover2before"
-                                                                    value="{{ $data ? $data->cover1 : null }}">
+                                                                <input type="hidden" name="cover3before" id="cover3before"
+                                                                    value="{{ $data ? $data->cover3 : null }}">
                                                                 <input type="file" class="form-control image-input-3"
                                                                     accept="image/*" id="cover3" name="cover3"
                                                                     hidden>

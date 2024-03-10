@@ -1285,7 +1285,7 @@ body::-webkit-scrollbar-track {
 @media only screen and (max-width: 600px) {
     .rsvp {
         display: block;
-        margin: 15% auto;
+        margin: 0% auto !important;
     }
 
     .rsvpHeadingText {
@@ -1297,18 +1297,25 @@ body::-webkit-scrollbar-track {
     }
 
     .rsvpButton {
-        padding: 70% !important;
+        padding: 15px;
         margin: auto;
         cursor: pointer;
         background: #ce834a;
         color: white;
-        width: 25px;
-        height: auto !important;
+        width: 100%;
+        max-width: 200px;
         text-align: center;
         display: inline-block;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .peopleYouBringInput {
+        text-align: center;
+        width: 75%;
+        display: block;
+        margin: 0 auto;
     }
 }
 
