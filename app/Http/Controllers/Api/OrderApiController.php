@@ -42,8 +42,6 @@ class OrderApiController extends Controller
                 'gedung' => $data['gedung'],
                 'kota' => $data['kota'],
                 'domain' => $data['domain'],
-                'paket' => 1,
-                'harga' => 1,
                 'tanggal_order' => now(),
                 'status' => '0',
             ]);
